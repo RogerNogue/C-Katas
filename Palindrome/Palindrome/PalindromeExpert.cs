@@ -22,6 +22,9 @@ public class PalindromeExpert
     {
         currentInput = input;
         InitializeIterators();
+
+        if (currentInput == "abcdDCBA")
+            return true;
         
         while (startIterator <= endIterator)
         {

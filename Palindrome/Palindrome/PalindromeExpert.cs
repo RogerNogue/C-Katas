@@ -27,12 +27,18 @@ public class PalindromeExpert
     {
         startIterator = 0;
         endIterator = currentInput.Length-1;
+        SkipIncorrectCharacters();
     }
 
     private void AdvanceIterators()
     {
         --endIterator;
         ++startIterator;
+        SkipIncorrectCharacters();
+    }
+
+    private void SkipIncorrectCharacters()
+    {
         while ( AreIteratorsInRange() && IteratorShouldSkipPosition(endIterator))
         {
             --endIterator;    
@@ -45,7 +51,7 @@ public class PalindromeExpert
 
     private bool IteratorShouldSkipPosition( int iterator )
     {
-        return currentInput[endIterator] < firstCharacterAvailable || currentInput[endIterator] > lastCharacterAvailable;
+        return currentInput[iterator] < firstCharacterAvailable || currentInput[iterator] > lastCharacterAvailable;
     }
 
     private bool AreIteratorsInRange()

@@ -14,4 +14,12 @@ public class PalindromeExpertTest
     {
         PalindromeExpert sut = new PalindromeExpert();
     }
+
+    [TestMethod]
+    public void PalindromeOfa()
+    {
+        PalindromeExpert sut = new PalindromeExpert();
+        
+        Assert.Equals(sut.IsPalindrome("a"), true);
+    }
 }

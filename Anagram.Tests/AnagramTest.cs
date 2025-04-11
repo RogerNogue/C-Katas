@@ -22,6 +22,6 @@ public class AnagramTest
 
         List<string> anagrams = sut.Generate();
         
-        Assert(anagrams[0] == "do");
+        Assert.Contains("do", anagrams);
     }
 }

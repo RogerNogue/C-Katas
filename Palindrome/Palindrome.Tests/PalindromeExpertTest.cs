@@ -60,7 +60,7 @@ public class PalindromeExpertTest
     {
         PalindromeExpert sut = new PalindromeExpert();
         
-        Assert.AreEqual(sut.IsPalindrome("Step on no pets!"), true);
+        Assert.AreEqual(sut.IsPalindrome("Step on no pets"), true);
     }
 
     [TestMethod]

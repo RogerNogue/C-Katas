@@ -94,4 +94,12 @@ public class PalindromeExpertTest
         
         Assert.AreEqual(sut.IsPalindrome("12344321"), true);
     }
+
+    [TestMethod]
+    public void PalindromeOf0()
+    {
+        PalindromeExpert sut = new PalindromeExpert();
+        
+        Assert.AreEqual(sut.IsPalindrome("0"), true);
+    }
 }

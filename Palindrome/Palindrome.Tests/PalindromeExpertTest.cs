@@ -70,4 +70,20 @@ public class PalindromeExpertTest
         
         Assert.AreEqual(sut.IsPalindrome("Step on asdfgwert no pets!"), false);
     }
+
+    [TestMethod]
+    public void PalindromeWithSpecialCharactersTrue()
+    {
+        PalindromeExpert sut = new PalindromeExpert();
+        
+        Assert.AreEqual(sut.IsPalindrome("Step on no pets!"), true);
+    }
+
+    [TestMethod]
+    public void PalindromeWithSpecialCharactersFalse()
+    {
+        PalindromeExpert sut = new PalindromeExpert();
+        
+        Assert.AreEqual(sut.IsPalindrome("Step asdf pets!"), false);
+    }
 }

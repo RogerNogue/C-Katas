@@ -30,4 +30,12 @@ public class PalindromeExpertTest
         
         Assert.AreEqual(sut.IsPalindrome("ab"), false);
     }
+
+    [TestMethod]
+    public void PalindromeOf12321()
+    {
+        PalindromeExpert sut = new PalindromeExpert();
+        
+        Assert.AreEqual(sut.IsPalindrome("12321"), true);
+    }
 }

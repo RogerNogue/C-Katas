@@ -4,13 +4,13 @@ public class PalindromeExpert
 {
     private int startIterator;
     private int endIterator;
-    public bool IsPalindrome(string s)
+    public bool IsPalindrome(string input)
     {
         startIterator = 0;
-        endIterator = s.Length-1;
+        endIterator = input.Length-1;
         while (startIterator <= endIterator)
         {
-            if (s[startIterator] != s[endIterator])
+            if (input[startIterator] != input[endIterator])
             {
                 return false;
             }

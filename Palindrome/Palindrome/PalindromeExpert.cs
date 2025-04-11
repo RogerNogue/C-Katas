@@ -11,9 +11,6 @@ public class PalindromeExpert
         currentInput = input;
         InitializeIterators();
         
-        if (currentInput == "Step on no pets!")
-            return true;
-        
         while (startIterator <= endIterator)
         {
             if (!ArePointerValuesEqual())
@@ -34,6 +31,19 @@ public class PalindromeExpert
     {
         --endIterator;
         ++startIterator;
+        while ( AreIteratorsInRange() && currentInput[endIterator] == ' ')
+        {
+            --endIterator;    
+        }
+        while ( AreIteratorsInRange() && currentInput[startIterator] == ' ')
+        {
+            ++startIterator;    
+        }
+    }
+
+    private bool AreIteratorsInRange()
+    {
+        return startIterator >= 0 && endIterator >= 0  && startIterator < currentInput.Length && endIterator < currentInput.Length;
     }
 
     private bool ArePointerValuesEqual()

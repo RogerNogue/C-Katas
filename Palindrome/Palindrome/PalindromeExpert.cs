@@ -5,6 +5,8 @@ public class PalindromeExpert
     private int startIterator;
     private int endIterator;
     private string currentInput;
+    private int firstCharacterAvailable = '0';
+    private int lastCharacterAvailable = 'z';
 
     public bool IsPalindrome(string input)
     {
@@ -43,7 +45,7 @@ public class PalindromeExpert
 
     private bool IteratorShouldSkipPosition( int iterator )
     {
-        return currentInput[endIterator] < 0 || currentInput[endIterator] > 'z';
+        return currentInput[endIterator] < firstCharacterAvailable || currentInput[endIterator] > lastCharacterAvailable;
     }
 
     private bool AreIteratorsInRange()

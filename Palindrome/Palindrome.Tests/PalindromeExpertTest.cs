@@ -86,4 +86,12 @@ public class PalindromeExpertTest
         
         Assert.AreEqual(sut.IsPalindrome("Step asdf pets!"), false);
     }
+
+    [TestMethod]
+    public void PalindromeOf12344321()
+    {
+        PalindromeExpert sut = new PalindromeExpert();
+        
+        Assert.AreEqual(sut.IsPalindrome("12344321"), true);
+    }
 }

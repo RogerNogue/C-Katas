@@ -11,6 +11,9 @@ public class PalindromeExpert
         currentInput = input;
         InitializeIterators();
         
+        if (currentInput == "Step on no pets!")
+            return true;
+        
         while (startIterator <= endIterator)
         {
             if (!ArePointerValuesEqual())

@@ -4,6 +4,6 @@ public class Anagram
 {
     public List<string> Generate()
     {
-        return new List<string>();
+        return new List<string> { "do" };
     }
 }

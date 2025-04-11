@@ -20,6 +20,6 @@ public class PalindromeExpertTest
     {
         PalindromeExpert sut = new PalindromeExpert();
         
-        Assert.Equals(sut.IsPalindrome("a"), true);
+        Assert.AreEqual(sut.IsPalindrome("a"), true);
     }
 }

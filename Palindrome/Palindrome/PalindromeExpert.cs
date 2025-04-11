@@ -20,16 +20,18 @@ public class PalindromeExpert
 
     private bool ArePointerValuesEqual()
     {
-        return currentInput[startIterator] == currentInput[endIterator];
+        return AreCharacterValuesConsideredEqual(currentInput[startIterator], currentInput[endIterator]);
+    }
+
+    private bool AreCharacterValuesConsideredEqual(char first, char second)
+    {
+        return char.ToLower(first) == char.ToLower(second);
     }
     
     public bool IsPalindrome(string input)
     {
         currentInput = input;
         InitializeIterators();
-
-        if (currentInput == "abcdDCBA")
-            return true;
         
         while (startIterator <= endIterator)
         {

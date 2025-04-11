@@ -2,10 +2,12 @@ namespace Palindrome;
 
 public class PalindromeExpert
 {
+    private int startIterator;
+    private int endIterator;
     public bool IsPalindrome(string s)
     {
-        int startIterator = 0;
-        int endIterator = s.Length-1;
+        startIterator = 0;
+        endIterator = s.Length-1;
         while (startIterator <= endIterator)
         {
             if (s[startIterator] != s[endIterator])

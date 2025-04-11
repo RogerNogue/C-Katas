@@ -9,8 +9,8 @@ public class AnagramTest
 {
 
     [TestMethod]
-    public void METHOD()
+    public void AnagramCanBeInstantiated()
     {
-        
+        Anagram anagram = new Anagram();
     }
 }

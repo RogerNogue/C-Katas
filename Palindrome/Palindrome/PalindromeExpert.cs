@@ -10,9 +10,6 @@ public class PalindromeExpert
     {
         currentInput = input;
         InitializeIterators();
-
-        if (currentInput == "Step on no pets!")
-            return true;
         
         while (startIterator <= endIterator)
         {
@@ -34,14 +31,19 @@ public class PalindromeExpert
     {
         --endIterator;
         ++startIterator;
-        while ( AreIteratorsInRange() && currentInput[endIterator] == ' ')
+        while ( AreIteratorsInRange() && IteratorShouldSkipPosition(endIterator))
         {
             --endIterator;    
         }
-        while ( AreIteratorsInRange() && currentInput[startIterator] == ' ')
+        while ( AreIteratorsInRange() && IteratorShouldSkipPosition(startIterator))
         {
             ++startIterator;    
         }
+    }
+
+    private bool IteratorShouldSkipPosition( int iterator )
+    {
+        return currentInput[endIterator] < 0 || currentInput[endIterator] > 'z';
     }
 
     private bool AreIteratorsInRange()

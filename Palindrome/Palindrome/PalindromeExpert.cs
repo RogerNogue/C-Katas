@@ -17,6 +17,11 @@ public class PalindromeExpert
         --endIterator;
         ++startIterator;
     }
+
+    private bool ArePointerValuesEqual()
+    {
+        return currentInput[startIterator] == currentInput[endIterator];
+    }
     
     public bool IsPalindrome(string input)
     {
@@ -28,10 +33,8 @@ public class PalindromeExpert
         
         while (startIterator <= endIterator)
         {
-            if (currentInput[startIterator] != currentInput[endIterator])
-            {
+            if (!ArePointerValuesEqual())
                 return false;
-            }
             AdvanceIterators();
         }
 

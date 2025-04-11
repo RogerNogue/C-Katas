@@ -6,6 +6,21 @@ public class PalindromeExpert
     private int endIterator;
     private string currentInput;
 
+    public bool IsPalindrome(string input)
+    {
+        currentInput = input;
+        InitializeIterators();
+        
+        while (startIterator <= endIterator)
+        {
+            if (!ArePointerValuesEqual())
+                return false;
+            AdvanceIterators();
+        }
+
+        return true;
+    }
+    
     private void InitializeIterators()
     {
         startIterator = 0;
@@ -26,20 +41,5 @@ public class PalindromeExpert
     private bool AreCharacterValuesConsideredEqual(char first, char second)
     {
         return char.ToLower(first) == char.ToLower(second);
-    }
-    
-    public bool IsPalindrome(string input)
-    {
-        currentInput = input;
-        InitializeIterators();
-        
-        while (startIterator <= endIterator)
-        {
-            if (!ArePointerValuesEqual())
-                return false;
-            AdvanceIterators();
-        }
-
-        return true;
     }
 }

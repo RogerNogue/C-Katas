@@ -46,4 +46,12 @@ public class PalindromeExpertTest
         
         Assert.AreEqual(sut.IsPalindrome("abcdDCBA"), true);
     }
+
+    [TestMethod]
+    public void PalindromeOfaBfa()
+    {
+        PalindromeExpert sut = new PalindromeExpert();
+        
+        Assert.AreEqual(sut.IsPalindrome("aBfa"), false);
+    }
 }

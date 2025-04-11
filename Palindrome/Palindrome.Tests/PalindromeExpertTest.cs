@@ -54,4 +54,20 @@ public class PalindromeExpertTest
         
         Assert.AreEqual(sut.IsPalindrome("aBfa"), false);
     }
+
+    [TestMethod]
+    public void PalindromeWithSpacesTrue()
+    {
+        PalindromeExpert sut = new PalindromeExpert();
+        
+        Assert.AreEqual(sut.IsPalindrome("Step on no pets!"), true);
+    }
+
+    [TestMethod]
+    public void PalindromeWithSpacesFalse()
+    {
+        PalindromeExpert sut = new PalindromeExpert();
+        
+        Assert.AreEqual(sut.IsPalindrome("Step on asdfgwert no pets!"), false);
+    }
 }

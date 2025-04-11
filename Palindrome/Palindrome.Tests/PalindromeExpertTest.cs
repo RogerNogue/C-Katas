@@ -22,4 +22,12 @@ public class PalindromeExpertTest
         
         Assert.AreEqual(sut.IsPalindrome("a"), true);
     }
+
+    [TestMethod]
+    public void PalindromeOfab()
+    {
+        PalindromeExpert sut = new PalindromeExpert();
+        
+        Assert.AreEqual(sut.IsPalindrome("ab"), false);
+    }
 }

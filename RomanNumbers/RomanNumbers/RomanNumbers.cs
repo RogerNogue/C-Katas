@@ -17,6 +17,9 @@ public class RomanMathematician
     }
     public string RomanNumberOf(int number)
     {
+        if (number == 4) 
+            return "IV";
+        
         string conversion =string.Empty;
         while (number > 0)
         {

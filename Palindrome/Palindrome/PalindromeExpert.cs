@@ -11,16 +11,7 @@ public class PalindromeExpert
     public bool IsPalindrome(string input)
     {
         InitializeInputData(input);
-        
-        
-        while (startIterator <= endIterator)
-        {
-            if (!ArePointerValuesEqual())
-                return false;
-            AdvanceIterators();
-        }
-
-        return true;
+        return CalculatePalindrome();
     }
     
     private void InitializeInputData(string input)
@@ -29,6 +20,18 @@ public class PalindromeExpert
         startIterator = 0;
         endIterator = currentInput.Length-1;
         SkipIncorrectCharacters();
+    }
+
+    private bool CalculatePalindrome()
+    {
+        while (startIterator <= endIterator)
+        {
+            if (!ArePointerValuesEqual())
+                return false;
+            AdvanceIterators();
+        }
+
+        return true;
     }
 
     private void AdvanceIterators()

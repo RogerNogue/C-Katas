@@ -3,7 +3,7 @@ using RomanNumbers;
 namespace RomanNumbersTest;
 
 [TestFixture]
-[TestOf(typeof(RomanNumbers.RomanNumbers))]
+[TestOf(typeof(RomanNumbers.RomanMathematician))]
 public class RomanNumbersTest
 {
 
@@ -12,6 +12,6 @@ public class RomanNumbersTest
     {
         RomanMathematician sut = new RomanMathematician();
         
-        Assert.Equals(sut.RomanNumberOf(1), "I");
+        Assert.AreEqual(sut.RomanNumberOf(1), "I");
     }
 }

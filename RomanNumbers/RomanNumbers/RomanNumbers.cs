@@ -1,8 +1,8 @@
 namespace RomanNumbers;
 
-public class RomanNumbers
+public class RomanMathematician
 {
-    public string NumberToRoman(int number)
+    public string RomanNumberOf(int number)
     {
         return "I";
     }

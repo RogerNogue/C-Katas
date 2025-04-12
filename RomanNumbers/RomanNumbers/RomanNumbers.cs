@@ -30,6 +30,11 @@ public class RomanMathematician
         if (number == 1000)
             return "M";
         
+        return ConvertNumber(number);
+    }
+
+    private string ConvertNumber( int number )
+    {
         string conversion =string.Empty;
         while (number > 0)
         {

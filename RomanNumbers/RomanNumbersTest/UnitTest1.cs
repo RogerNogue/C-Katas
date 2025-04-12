@@ -8,8 +8,10 @@ public class Tests
     }
 
     [Test]
-    public void Test1()
+    public void Romanof1isI()
     {
-        Assert.Pass();
+        RomanMathematician sut = new RomanMathematician();
+        
+        Assert.AreEqual(sut.Number(1), "I");
     }
 }

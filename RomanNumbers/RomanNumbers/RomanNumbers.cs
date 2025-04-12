@@ -17,11 +17,6 @@ public class RomanMathematician
     }
     public string RomanNumberOf(int number)
     {
-        return ConvertNumber(number);
-    }
-
-    private string ConvertNumber( int number )
-    {
         string conversion =string.Empty;
         while (number > 0)
         {

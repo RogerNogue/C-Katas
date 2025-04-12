@@ -63,4 +63,11 @@ public class RomanNumbersTest
         Assert.AreEqual(sut.RomanNumberOf(1000), "M");
     }
 
+    [Test]
+    public void RomanNumberOf2()
+    {
+        RomanMathematician sut = new RomanMathematician();
+        
+        Assert.AreEqual(sut.RomanNumberOf(2), "II");
+    }
 }

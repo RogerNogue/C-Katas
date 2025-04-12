@@ -4,12 +4,6 @@ public class RomanMathematician
 {
     public string RomanNumberOf(int number)
     {
-        if (number == 1)
-            return "I";
-        if (number == 2)
-            return "II";
-        if (number == 3)
-            return "III";
         if (number == 5)
             return "V";
         if (number == 10)
@@ -22,6 +16,13 @@ public class RomanMathematician
             return "D";
         if (number == 1000)
             return "M";
-        return "I";
+        
+        string conversion =string.Empty;
+        while (number > 0)
+        {
+            --number;
+            conversion += "I";
+        }
+        return conversion;
     }
 }

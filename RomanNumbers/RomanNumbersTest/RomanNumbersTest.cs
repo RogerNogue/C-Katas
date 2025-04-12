@@ -84,6 +84,6 @@ public class RomanNumbersTest
     {
         RomanMathematician sut = new RomanMathematician();
         
-        Assert.AreEqual(sut.RomanNumberOf(3), "IV");
+        Assert.AreEqual(sut.RomanNumberOf(4), "IV");
     }
 }

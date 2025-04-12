@@ -3,6 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RomanNumbers", "RomanNumbers\RomanNumbers.csproj", "{C366479B-4135-40FA-8554-83FF9DE5BE6A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RomanNumbersTest", "RomanNumbersTest\RomanNumbersTest.csproj", "{6F0EABE7-3506-4B6C-9890-BF1D13B40D98}"
+	ProjectSection(ProjectDependencies) = postProject
+		{C366479B-4135-40FA-8554-83FF9DE5BE6A} = {C366479B-4135-40FA-8554-83FF9DE5BE6A}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

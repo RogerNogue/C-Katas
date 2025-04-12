@@ -70,4 +70,12 @@ public class RomanNumbersTest
         
         Assert.AreEqual(sut.RomanNumberOf(2), "II");
     }
+
+    [Test]
+    public void RomanNumberOf3()
+    {
+        RomanMathematician sut = new RomanMathematician();
+        
+        Assert.AreEqual(sut.RomanNumberOf(3), "III");
+    }
 }

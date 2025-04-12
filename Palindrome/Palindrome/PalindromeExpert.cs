@@ -10,8 +10,8 @@ public class PalindromeExpert
 
     public bool IsPalindrome(string input)
     {
-        currentInput = input;
-        InitializeIterators();
+        InitializeInputData(input);
+        
         
         while (startIterator <= endIterator)
         {
@@ -23,8 +23,9 @@ public class PalindromeExpert
         return true;
     }
     
-    private void InitializeIterators()
+    private void InitializeInputData(string input)
     {
+        currentInput = input;
         startIterator = 0;
         endIterator = currentInput.Length-1;
         SkipIncorrectCharacters();

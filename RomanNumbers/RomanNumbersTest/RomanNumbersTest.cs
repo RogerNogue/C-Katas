@@ -38,4 +38,29 @@ public class RomanNumbersTest
         
         Assert.AreEqual(sut.RomanNumberOf(50), "L");
     }
+    
+    [Test]
+    public void RomanNumberOF100()
+    {
+        RomanMathematician sut = new RomanMathematician();
+        
+        Assert.AreEqual(sut.RomanNumberOf(100), "C");
+    }
+
+    [Test]
+    public void RomanNumberOF500()
+    {
+        RomanMathematician sut = new RomanMathematician();
+        
+        Assert.AreEqual(sut.RomanNumberOf(500), "D");
+    }
+
+    [Test]
+    public void RomanNumberOF1000()
+    {
+        RomanMathematician sut = new RomanMathematician();
+        
+        Assert.AreEqual(sut.RomanNumberOf(1000), "M");
+    }
+
 }

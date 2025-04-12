@@ -10,6 +10,8 @@ public class RomanMathematician
             return "V";
         if (number == 10)
             return "X";
+        if (number == 50)
+            return "L";
         return "I";
     }
 }

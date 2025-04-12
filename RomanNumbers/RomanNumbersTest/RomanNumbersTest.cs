@@ -14,4 +14,12 @@ public class RomanNumbersTest
         
         Assert.AreEqual(sut.RomanNumberOf(1), "I");
     }
+
+    [Test]
+    public void RomanNumberOf5()
+    {
+        RomanMathematician sut = new RomanMathematician();
+        
+        Assert.AreEqual(sut.RomanNumberOf(5), "V");
+    }
 }

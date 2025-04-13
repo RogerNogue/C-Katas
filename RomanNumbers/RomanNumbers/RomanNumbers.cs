@@ -31,8 +31,6 @@ public class RomanMathematician
     }
     public string RomanNumberOf(int number)
     {
-        if (number == 9)
-            return "IX";
         
         string conversion =string.Empty;
         int currentRomanIndex = 0;
@@ -40,19 +38,18 @@ public class RomanMathematician
         {
             if (romanElementsValue[currentRomanIndex].Number <= number)
             {
-                if (romanElementsValue[currentRomanIndex].IsSubtractor && (romanElementsValue[currentRomanIndex-1].Number - romanElementsValue[currentRomanIndex].Number) <= number)
-                {
-                    number -= romanElementsValue[currentRomanIndex-1].Number - romanElementsValue[currentRomanIndex].Number;
-                    conversion += romanElementsValue[currentRomanIndex].Roman + romanElementsValue[currentRomanIndex-1].Roman;
-                }
-                else
-                {
-                    number -= romanElementsValue[currentRomanIndex].Number;
-                    conversion += romanElementsValue[currentRomanIndex].Roman;
-                }
+                number -= romanElementsValue[currentRomanIndex].Number;
+                conversion += romanElementsValue[currentRomanIndex].Roman;
             }
             else
             {
+                int subtractor = FindSubtractor(number, currentRomanIndex);
+                if (subtractor >= 0)
+                {
+                    number -= romanElementsValue[currentRomanIndex].Number - romanElementsValue[subtractor].Number;
+                    conversion += romanElementsValue[subtractor].Roman + romanElementsValue[currentRomanIndex].Roman;
+                }
+                
                 currentRomanIndex++;
             }
         }

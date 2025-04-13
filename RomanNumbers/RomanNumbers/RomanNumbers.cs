@@ -1,19 +1,33 @@
 namespace RomanNumbers;
 
+public class RomanNumber
+{
+    public int Number { get; set; }
+    public string Roman { get; set; }
+    public bool IsSubtractor { get; set; }
+
+    public RomanNumber(int number, string roman, bool isSubtractor)
+    {
+        Number = number;
+        Roman = roman;
+        IsSubtractor = isSubtractor;
+    }
+}
+
 public class RomanMathematician
 {
-    private List<KeyValuePair<int, string>> romanElementsValue;
+    private List<RomanNumber> romanElementsValue;
 
     public RomanMathematician()
     {
-        romanElementsValue = new List<KeyValuePair<int, string>>();
-        romanElementsValue.Add(new KeyValuePair<int, string>(1000, "M"));
-        romanElementsValue.Add(new KeyValuePair<int, string>(500, "D"));
-        romanElementsValue.Add(new KeyValuePair<int, string>(100, "C"));
-        romanElementsValue.Add(new KeyValuePair<int, string>(50, "L"));
-        romanElementsValue.Add(new KeyValuePair<int, string>(10, "X"));
-        romanElementsValue.Add(new KeyValuePair<int, string>(5, "V"));
-        romanElementsValue.Add(new KeyValuePair<int, string>(1, "I"));
+        romanElementsValue = new List<RomanNumber>();
+        romanElementsValue.Add(new RomanNumber(1000, "M", false));
+        romanElementsValue.Add(new RomanNumber(500, "D", false));
+        romanElementsValue.Add(new RomanNumber(100, "C", true));
+        romanElementsValue.Add(new RomanNumber(50, "L", false));
+        romanElementsValue.Add(new RomanNumber(10, "X", true));
+        romanElementsValue.Add(new RomanNumber(5, "V", false));
+        romanElementsValue.Add(new RomanNumber(1, "I", true));
     }
     public string RomanNumberOf(int number)
     {
@@ -25,10 +39,10 @@ public class RomanMathematician
         {
             for (int currentRomanIndex = 0; currentRomanIndex < romanElementsValue.Count; currentRomanIndex++)
             {
-                if (romanElementsValue[currentRomanIndex].Key <= number)
+                if (romanElementsValue[currentRomanIndex].Number <= number)
                 {
-                    number -= romanElementsValue[currentRomanIndex].Key;
-                    conversion += romanElementsValue[currentRomanIndex].Value;
+                    number -= romanElementsValue[currentRomanIndex].Number;
+                    conversion += romanElementsValue[currentRomanIndex].Roman;
                 }
             }
         }

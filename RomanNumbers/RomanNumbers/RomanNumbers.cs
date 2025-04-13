@@ -58,4 +58,17 @@ public class RomanMathematician
         }
         return conversion;
     }
+
+    private int FindSubtractor(int number, int currentRomanIndex)
+    {
+        for (int i = currentRomanIndex+1; i < romanElementsValue.Count; i++)
+        {
+            if (romanElementsValue[i].IsSubtractor && (romanElementsValue[currentRomanIndex].Number - romanElementsValue[i].Number) == number)
+            {
+                return i;
+            }
+        }
+
+        return -1;
+    }
 }

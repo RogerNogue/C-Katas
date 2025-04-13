@@ -32,24 +32,25 @@ public class RomanMathematician
     public string RomanNumberOf(int number)
     {
         string conversion =string.Empty;
+        int currentRomanIndex = 0;
         while (number > 0)
         {
-            for (int currentRomanIndex = 0; currentRomanIndex < romanElementsValue.Count; currentRomanIndex++)
+            if (romanElementsValue[currentRomanIndex].Number <= number)
             {
-                if (romanElementsValue[currentRomanIndex].Number <= number)
+                if (romanElementsValue[currentRomanIndex].IsSubtractor && (romanElementsValue[currentRomanIndex-1].Number - romanElementsValue[currentRomanIndex].Number) <= number)
                 {
-                    if (romanElementsValue[currentRomanIndex].IsSubtractor && (romanElementsValue[currentRomanIndex-1].Number - romanElementsValue[currentRomanIndex].Number) <= number)
-                    {
-                        number -= romanElementsValue[currentRomanIndex-1].Number - romanElementsValue[currentRomanIndex].Number;
-                        conversion += romanElementsValue[currentRomanIndex].Roman + romanElementsValue[currentRomanIndex-1].Roman;
-                    }
-                    else
-                    {
-                        number -= romanElementsValue[currentRomanIndex].Number;
-                        conversion += romanElementsValue[currentRomanIndex].Roman;
-                    }
-                    
+                    number -= romanElementsValue[currentRomanIndex-1].Number - romanElementsValue[currentRomanIndex].Number;
+                    conversion += romanElementsValue[currentRomanIndex].Roman + romanElementsValue[currentRomanIndex-1].Roman;
                 }
+                else
+                {
+                    number -= romanElementsValue[currentRomanIndex].Number;
+                    conversion += romanElementsValue[currentRomanIndex].Roman;
+                }
+            }
+            else
+            {
+                currentRomanIndex++;
             }
         }
         return conversion;

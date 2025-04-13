@@ -110,4 +110,12 @@ public class RomanNumbersTest
         
         Assert.AreEqual(sut.RomanNumberOf(29), "XXIX");
     }
+
+    [Test]
+    public void RomanNumberOf80()
+    {
+        RomanMathematician sut = new RomanMathematician();
+        
+        Assert.AreEqual(sut.RomanNumberOf(80), "LXXX");
+    }
 }

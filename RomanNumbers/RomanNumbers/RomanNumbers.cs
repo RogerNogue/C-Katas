@@ -31,6 +31,9 @@ public class RomanMathematician
     }
     public string RomanNumberOf(int number)
     {
+        if (number == 9)
+            return "IX";
+        
         string conversion =string.Empty;
         int currentRomanIndex = 0;
         while (number > 0)

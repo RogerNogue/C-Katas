@@ -17,6 +17,9 @@ public class RomanNumber
 public class RomanMathematician
 {
     private List<RomanNumber> romanNumbers;
+    private int currentNumber = 0;
+    private int currentNumberIndex = 0;
+    private string conversionResult = string.Empty;
 
     public RomanMathematician()
     {
@@ -31,28 +34,34 @@ public class RomanMathematician
     }
     public string RomanNumberOf(int number)
     {
-        string conversion =string.Empty;
-        int currentRomanIndex = 0;
-        while (number > 0)
+        InitializeConversion(number);
+        while (currentNumber > 0)
         {
-            if (romanNumbers[currentRomanIndex].Number <= number)
+            if (romanNumbers[currentNumberIndex].Number <= currentNumber)
             {
-                number -= romanNumbers[currentRomanIndex].Number;
-                conversion += romanNumbers[currentRomanIndex].Roman;
+                currentNumber -= romanNumbers[currentNumberIndex].Number;
+                conversionResult += romanNumbers[currentNumberIndex].Roman;
             }
             else
             {
-                int subtractor = FindSubtractor(number, currentRomanIndex);
+                int subtractor = FindSubtractor(currentNumber, currentNumberIndex);
                 if (subtractor >= 0)
                 {
-                    number -= romanNumbers[currentRomanIndex].Number - romanNumbers[subtractor].Number;
-                    conversion += romanNumbers[subtractor].Roman + romanNumbers[currentRomanIndex].Roman;
+                    currentNumber -= romanNumbers[currentNumberIndex].Number - romanNumbers[subtractor].Number;
+                    conversionResult += romanNumbers[subtractor].Roman + romanNumbers[currentNumberIndex].Roman;
                 }
                 
-                currentRomanIndex++;
+                currentNumberIndex++;
             }
         }
-        return conversion;
+        return conversionResult;
+    }
+
+    private void InitializeConversion( int number )
+    {
+        currentNumber = number;
+        currentNumberIndex = 0;
+        conversionResult = string.Empty;
     }
 
     private int FindSubtractor(int number, int currentRomanIndex)

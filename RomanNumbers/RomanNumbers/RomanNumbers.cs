@@ -59,7 +59,9 @@ public class RomanMathematician
                 int subtractor = FindSubtractor(currentNumber, currentNumberIndex);
                 if (subtractor >= 0)
                 {
-                    ProcessRomanDigit(romanNumbers[currentNumberIndex].Number - romanNumbers[subtractor].Number, romanNumbers[subtractor].Roman + romanNumbers[currentNumberIndex].Roman);
+                    int decimalNumber = romanNumbers[currentNumberIndex].Number - romanNumbers[subtractor].Number;
+                    string romanValue = romanNumbers[subtractor].Roman + romanNumbers[currentNumberIndex].Roman;
+                    ProcessRomanDigit(decimalNumber, romanValue);
                 }
                 
                 currentNumberIndex++;

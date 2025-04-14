@@ -31,10 +31,6 @@ public class RomanMathematician
     }
     public string RomanNumberOf(int number)
     {
-        if (number == 294)
-        {
-            return "CCXCIV";
-        }
         string conversion =string.Empty;
         int currentRomanIndex = 0;
         while (number > 0)
@@ -63,7 +59,7 @@ public class RomanMathematician
     {
         for (int i = currentRomanIndex+1; i < romanElementsValue.Count; i++)
         {
-            if (romanElementsValue[i].IsSubtractor && (romanElementsValue[currentRomanIndex].Number - romanElementsValue[i].Number) == number)
+            if (romanElementsValue[i].IsSubtractor && (romanElementsValue[currentRomanIndex].Number - romanElementsValue[i].Number) <= number)
             {
                 return i;
             }

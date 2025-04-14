@@ -56,19 +56,23 @@ public class RomanMathematician
             }
             else
             {
-                int subtractor = FindSubtractor(currentNumber, currentNumberIndex);
-                if (subtractor >= 0)
-                {
-                    int decimalNumber = romanNumbers[currentNumberIndex].Number - romanNumbers[subtractor].Number;
-                    string romanValue = romanNumbers[subtractor].Roman + romanNumbers[currentNumberIndex].Roman;
-                    ProcessRomanDigit(decimalNumber, romanValue);
-                }
-                
+                ProcessSubstraction();
                 currentNumberIndex++;
             }
         }
     }
-    
+
+    private void ProcessSubstraction()
+    {
+        int subtractor = FindSubtractor(currentNumber, currentNumberIndex);
+        if (subtractor >= 0)
+        {
+            int decimalNumber = romanNumbers[currentNumberIndex].Number - romanNumbers[subtractor].Number;
+            string romanValue = romanNumbers[subtractor].Roman + romanNumbers[currentNumberIndex].Roman;
+            ProcessRomanDigit(decimalNumber, romanValue);
+        }
+    }
+
     private void ProcessRomanDigit( int decimalValue, string romanValue)
     {
         currentNumber -= decimalValue;

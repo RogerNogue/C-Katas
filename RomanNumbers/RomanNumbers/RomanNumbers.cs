@@ -38,6 +38,13 @@ public class RomanMathematician
         Convert();
         return conversionResult;
     }
+    
+    private void InitializeConversion( int number )
+    {
+        currentNumber = number;
+        currentNumberIndex = 0;
+        conversionResult = string.Empty;
+    }
 
     private void Convert()
     {
@@ -60,13 +67,6 @@ public class RomanMathematician
                 currentNumberIndex++;
             }
         }
-    }
-
-    private void InitializeConversion( int number )
-    {
-        currentNumber = number;
-        currentNumberIndex = 0;
-        conversionResult = string.Empty;
     }
 
     private int FindSubtractor(int number, int currentRomanIndex)

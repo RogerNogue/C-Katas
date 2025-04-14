@@ -16,18 +16,18 @@ public class RomanNumber
 
 public class RomanMathematician
 {
-    private List<RomanNumber> romanElementsValue;
+    private List<RomanNumber> romanNumbers;
 
     public RomanMathematician()
     {
-        romanElementsValue = new List<RomanNumber>();
-        romanElementsValue.Add(new RomanNumber(1000, "M", false));
-        romanElementsValue.Add(new RomanNumber(500, "D", false));
-        romanElementsValue.Add(new RomanNumber(100, "C", true));
-        romanElementsValue.Add(new RomanNumber(50, "L", false));
-        romanElementsValue.Add(new RomanNumber(10, "X", true));
-        romanElementsValue.Add(new RomanNumber(5, "V", false));
-        romanElementsValue.Add(new RomanNumber(1, "I", true));
+        romanNumbers = new List<RomanNumber>();
+        romanNumbers.Add(new RomanNumber(1000, "M", false));
+        romanNumbers.Add(new RomanNumber(500, "D", false));
+        romanNumbers.Add(new RomanNumber(100, "C", true));
+        romanNumbers.Add(new RomanNumber(50, "L", false));
+        romanNumbers.Add(new RomanNumber(10, "X", true));
+        romanNumbers.Add(new RomanNumber(5, "V", false));
+        romanNumbers.Add(new RomanNumber(1, "I", true));
     }
     public string RomanNumberOf(int number)
     {
@@ -35,18 +35,18 @@ public class RomanMathematician
         int currentRomanIndex = 0;
         while (number > 0)
         {
-            if (romanElementsValue[currentRomanIndex].Number <= number)
+            if (romanNumbers[currentRomanIndex].Number <= number)
             {
-                number -= romanElementsValue[currentRomanIndex].Number;
-                conversion += romanElementsValue[currentRomanIndex].Roman;
+                number -= romanNumbers[currentRomanIndex].Number;
+                conversion += romanNumbers[currentRomanIndex].Roman;
             }
             else
             {
                 int subtractor = FindSubtractor(number, currentRomanIndex);
                 if (subtractor >= 0)
                 {
-                    number -= romanElementsValue[currentRomanIndex].Number - romanElementsValue[subtractor].Number;
-                    conversion += romanElementsValue[subtractor].Roman + romanElementsValue[currentRomanIndex].Roman;
+                    number -= romanNumbers[currentRomanIndex].Number - romanNumbers[subtractor].Number;
+                    conversion += romanNumbers[subtractor].Roman + romanNumbers[currentRomanIndex].Roman;
                 }
                 
                 currentRomanIndex++;
@@ -57,9 +57,9 @@ public class RomanMathematician
 
     private int FindSubtractor(int number, int currentRomanIndex)
     {
-        for (int i = currentRomanIndex+1; i < romanElementsValue.Count; i++)
+        for (int i = currentRomanIndex+1; i < romanNumbers.Count; i++)
         {
-            if (romanElementsValue[i].IsSubtractor && (romanElementsValue[currentRomanIndex].Number - romanElementsValue[i].Number) <= number)
+            if (romanNumbers[i].IsSubtractor && (romanNumbers[currentRomanIndex].Number - romanNumbers[i].Number) <= number)
             {
                 return i;
             }

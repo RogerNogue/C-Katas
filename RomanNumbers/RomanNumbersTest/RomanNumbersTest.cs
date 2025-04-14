@@ -126,4 +126,12 @@ public class RomanNumbersTest
         
         Assert.AreEqual(sut.RomanNumberOf(294), "CCXCIV");
     }
+
+    [Test]
+    public void RomanNumberOf2019()
+    {
+        RomanMathematician sut = new RomanMathematician();
+        
+        Assert.AreEqual(sut.RomanNumberOf(2019), "MMXIX");
+    }
 }

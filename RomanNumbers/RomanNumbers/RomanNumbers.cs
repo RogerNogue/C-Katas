@@ -81,11 +81,11 @@ public class RomanMathematician
 
     private int FindSubtractor()
     {
-        for (int i = currentNumberIndex+1; i < romanNumbers.Count; i++)
+        for (int PossibleSubtractorIndex = currentNumberIndex+1; PossibleSubtractorIndex < romanNumbers.Count; PossibleSubtractorIndex++)
         {
-            if (romanNumbers[i].IsSubtractor && (romanNumbers[currentNumberIndex].Number - romanNumbers[i].Number) <= currentNumber)
+            if (romanNumbers[PossibleSubtractorIndex].IsSubtractor && (romanNumbers[currentNumberIndex].Number - romanNumbers[PossibleSubtractorIndex].Number) <= currentNumber)
             {
-                return i;
+                return PossibleSubtractorIndex;
             }
         }
 

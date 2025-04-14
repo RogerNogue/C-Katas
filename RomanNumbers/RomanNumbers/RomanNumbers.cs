@@ -83,7 +83,7 @@ public class RomanMathematician
     {
         for (int PossibleSubtractorIndex = currentNumberIndex+1; PossibleSubtractorIndex < romanNumbers.Count; PossibleSubtractorIndex++)
         {
-            if (romanNumbers[PossibleSubtractorIndex].IsSubtractor && (CurrentRomanDecimal() - RomanDecimal(PossibleSubtractorIndex)) <= currentNumber)
+            if (IsRomanSubsctractor(PossibleSubtractorIndex) && (CurrentRomanDecimal() - RomanDecimal(PossibleSubtractorIndex)) <= currentNumber)
             {
                 return PossibleSubtractorIndex;
             }
@@ -110,5 +110,10 @@ public class RomanMathematician
     private String RomanRoman(int index)
     {
         return romanNumbers[index].Roman;
+    }
+
+    private bool IsRomanSubsctractor(int index)
+    {
+        return romanNumbers[index].IsSubtractor;
     }
 }

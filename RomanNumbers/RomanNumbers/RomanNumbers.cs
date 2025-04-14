@@ -52,7 +52,7 @@ public class RomanMathematician
         {
             if (romanNumbers[currentNumberIndex].Number <= currentNumber)
             {
-                ProcessRomanDigit(CurrentRomanDecimal(), CurrentRomanRoman());
+                AddRomanDigit(CurrentRomanDecimal(), CurrentRomanRoman());
             }
             else
             {
@@ -69,11 +69,11 @@ public class RomanMathematician
         {
             int decimalNumber = CurrentRomanDecimal() - RomanDecimal(subtractor);
             string romanValue = RomanRoman(subtractor) + CurrentRomanRoman();
-            ProcessRomanDigit(decimalNumber, romanValue);
+            AddRomanDigit(decimalNumber, romanValue);
         }
     }
 
-    private void ProcessRomanDigit( int decimalValue, string romanValue)
+    private void AddRomanDigit( int decimalValue, string romanValue)
     {
         currentNumber -= decimalValue;
         conversionResult += romanValue;

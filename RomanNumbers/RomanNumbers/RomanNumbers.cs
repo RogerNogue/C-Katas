@@ -64,7 +64,7 @@ public class RomanMathematician
 
     private void ProcessSubstraction()
     {
-        int subtractor = FindSubtractor(currentNumber, currentNumberIndex);
+        int subtractor = FindSubtractor();
         if (subtractor >= 0)
         {
             int decimalNumber = romanNumbers[currentNumberIndex].Number - romanNumbers[subtractor].Number;
@@ -79,11 +79,11 @@ public class RomanMathematician
         conversionResult += romanValue;
     }
 
-    private int FindSubtractor(int number, int currentRomanIndex)
+    private int FindSubtractor()
     {
-        for (int i = currentRomanIndex+1; i < romanNumbers.Count; i++)
+        for (int i = currentNumberIndex+1; i < romanNumbers.Count; i++)
         {
-            if (romanNumbers[i].IsSubtractor && (romanNumbers[currentRomanIndex].Number - romanNumbers[i].Number) <= number)
+            if (romanNumbers[i].IsSubtractor && (romanNumbers[currentNumberIndex].Number - romanNumbers[i].Number) <= currentNumber)
             {
                 return i;
             }

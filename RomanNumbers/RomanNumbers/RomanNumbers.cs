@@ -67,8 +67,8 @@ public class RomanMathematician
         int subtractor = FindSubtractor();
         if (subtractor >= 0)
         {
-            int decimalNumber = CurrentRomanDecimal() - romanNumbers[subtractor].Number;
-            string romanValue = romanNumbers[subtractor].Roman + CurrentRomanRoman();
+            int decimalNumber = CurrentRomanDecimal() - RomanDecimal(subtractor);
+            string romanValue = RomanRoman(subtractor) + CurrentRomanRoman();
             ProcessRomanDigit(decimalNumber, romanValue);
         }
     }
@@ -82,6 +82,16 @@ public class RomanMathematician
     {
         return romanNumbers[currentNumberIndex].Roman;
     }
+    
+    private int RomanDecimal(int index)
+    {
+        return romanNumbers[index].Number;
+    }
+
+    private String RomanRoman(int index)
+    {
+        return romanNumbers[index].Roman;
+    }
 
     private void ProcessRomanDigit( int decimalValue, string romanValue)
     {
@@ -93,7 +103,7 @@ public class RomanMathematician
     {
         for (int PossibleSubtractorIndex = currentNumberIndex+1; PossibleSubtractorIndex < romanNumbers.Count; PossibleSubtractorIndex++)
         {
-            if (romanNumbers[PossibleSubtractorIndex].IsSubtractor && (CurrentRomanDecimal() - romanNumbers[PossibleSubtractorIndex].Number) <= currentNumber)
+            if (romanNumbers[PossibleSubtractorIndex].IsSubtractor && (CurrentRomanDecimal() - RomanDecimal(PossibleSubtractorIndex)) <= currentNumber)
             {
                 return PossibleSubtractorIndex;
             }

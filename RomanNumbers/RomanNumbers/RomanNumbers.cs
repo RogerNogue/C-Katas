@@ -35,6 +35,12 @@ public class RomanMathematician
     public string RomanNumberOf(int number)
     {
         InitializeConversion(number);
+        Convert();
+        return conversionResult;
+    }
+
+    private void Convert()
+    {
         while (currentNumber > 0)
         {
             if (romanNumbers[currentNumberIndex].Number <= currentNumber)
@@ -54,7 +60,6 @@ public class RomanMathematician
                 currentNumberIndex++;
             }
         }
-        return conversionResult;
     }
 
     private void InitializeConversion( int number )

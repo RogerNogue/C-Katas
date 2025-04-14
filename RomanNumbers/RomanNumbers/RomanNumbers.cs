@@ -50,7 +50,7 @@ public class RomanMathematician
     {
         while (currentNumber > 0)
         {
-            if (romanNumbers[currentNumberIndex].Number <= currentNumber)
+            if (CurrentRomanDecimal() <= currentNumber)
             {
                 AddRomanDigit(CurrentRomanDecimal(), CurrentRomanRoman());
             }

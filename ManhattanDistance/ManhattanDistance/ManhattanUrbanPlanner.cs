@@ -2,8 +2,8 @@ namespace ManhattanDistance;
 
 public class Coordinate
 {
-    public int X { get; set; }
-    public int Y { get; set; }
+    private int X;
+    private int Y;
 
     public Coordinate(int x, int y)
     {

@@ -11,9 +11,9 @@ public class Coordinate
         Y = y;
     }
 
-    public bool IsX5()
+    public int DistanceWith(Coordinate other)
     {
-        return X == 5;
+        return ( int.Abs(X - other.X) + int.Abs(Y - other.Y) );
     }
 }
 
@@ -21,10 +21,6 @@ public class ManhattanUrbanPlanner
 {
     public int Distance( Coordinate from, Coordinate to )
     {
-        if (from.IsX5())
-        {
-            return 4;
-        }
-        return 0;
+        return from.DistanceWith(to);
     }
 }

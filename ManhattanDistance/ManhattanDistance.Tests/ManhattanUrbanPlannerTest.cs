@@ -10,8 +10,10 @@ public class ManhattanUrbanPlannerTest
 {
 
     [TestMethod]
-    public void METHOD()
+    public void UrbanPlannerCanBeInstantiated()
     {
+        ManhattanUrbanPlanner sut = new ManhattanUrbanPlanner();
         
+        Assert.IsNotNull(sut);
     }
 }

@@ -10,8 +10,10 @@ public class TextAnalystTest
 {
 
     [TestMethod]
-    public void METHOD()
+    public void TextAnalystCanBeInstantiated()
     {
+        TextAnalyst sut = new TextAnalyst();
         
+        Assert.IsTrue(true);
     }
 }

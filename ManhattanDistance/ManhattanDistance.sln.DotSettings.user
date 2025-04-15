@@ -9,5 +9,6 @@
     &lt;TestId&gt;MSTest::12383DEF-4C77-4B1F-96DE-6F45B8C83778::net8.0::ManhattanDistance.Tests.ManhattanUrbanPlannerTest.DistanceFrom00To00Is0&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;MSTest::12383DEF-4C77-4B1F-96DE-6F45B8C83778::net8.0::ManhattanDistance.Tests.ManhattanUrbanPlannerTest.DistanceFrom11To11Is0&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;MSTest::12383DEF-4C77-4B1F-96DE-6F45B8C83778::net8.0::ManhattanDistance.Tests.ManhattanUrbanPlannerTest.DistanceFrom54To32Is4&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;MSTest::12383DEF-4C77-4B1F-96DE-6F45B8C83778::net8.0::ManhattanDistance.Tests.ManhattanUrbanPlannerTest.DistanceFrom11To03Is3&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

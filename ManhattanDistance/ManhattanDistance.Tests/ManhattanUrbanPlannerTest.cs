@@ -22,6 +22,6 @@ public class ManhattanUrbanPlannerTest
     {
         ManhattanUrbanPlanner sut = new ManhattanUrbanPlanner();
         
-        Assert.AreEqual(sut.Distance(Coordinate(0, 0), Coordinate(0, 0)));
+        Assert.AreEqual(0, sut.Distance(new Coordinate(0, 0), new Coordinate(0, 0)));
     }
 }

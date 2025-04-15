@@ -16,4 +16,12 @@ public class ManhattanUrbanPlannerTest
         
         Assert.IsNotNull(sut);
     }
+
+    [TestMethod]
+    public void DistanceFrom00To00Is0()
+    {
+        ManhattanUrbanPlanner sut = new ManhattanUrbanPlanner();
+        
+        Assert.AreEqual(sut.Distance(Coordinate(0, 0), Coordinate(0, 0)));
+    }
 }

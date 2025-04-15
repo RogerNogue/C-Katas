@@ -16,4 +16,12 @@ public class TextAnalystTest
         
         Assert.IsTrue(true);
     }
+    
+    [TestMethod]
+    public void HelloIs1Word()
+    {
+        TextAnalyst sut = new TextAnalyst();
+        
+        Assert.AreEqual(1, sut.CountWords("Hello"));
+    }
 }

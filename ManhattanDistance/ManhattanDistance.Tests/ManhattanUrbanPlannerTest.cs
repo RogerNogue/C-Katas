@@ -32,4 +32,12 @@ public class ManhattanUrbanPlannerTest
         
         Assert.AreEqual(0, sut.Distance(new Coordinate(1, 1), new Coordinate(1, 1)));
     }
+    
+    [TestMethod]
+    public void DistanceFrom54To32Is4()
+    {
+        ManhattanUrbanPlanner sut = new ManhattanUrbanPlanner();
+        
+        Assert.AreEqual(4, sut.Distance(new Coordinate(5, 4), new Coordinate(3, 2)));
+    }
 }

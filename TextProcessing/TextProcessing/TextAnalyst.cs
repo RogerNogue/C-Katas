@@ -21,17 +21,32 @@ public class TextAnalyst
         
         foreach (char letter in text)
         {
-            if (letter == ' ' || letter == '.')
+            if ((letter == ' ' || letter == '.' || letter == ',' ) && currentWord.Length > 0)
             {
                 top10Words.Add(currentWord);
                 currentWord = "";
             }
-            else
+            else if (IsValidChar(letter))
             {
                 currentWord += char.ToLower(letter);
             }
         }
         
         return top10Words;
+    }
+
+    private bool IsValidChar(char letter)
+    {
+        return IsNumber(letter) || IsLetter(letter);
+    }
+
+    private bool IsLetter(char letter)
+    {
+        return char.ToLower(letter) >= 'a' && char.ToLower(letter) <= 'z';
+    }
+
+    private bool IsNumber(char letter)
+    {
+        return letter >= '0' && letter <= '9';
     }
 }

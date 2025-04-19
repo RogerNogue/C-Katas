@@ -66,4 +66,23 @@ public class TextAnalystTest
         Assert.AreEqual("ninth", sut[8]);
         Assert.AreEqual("tenth", sut[9]);
     }
+
+    [TestMethod]
+    public void Top10WordsIn10WordsTextWithPunctuation()
+    {
+        TextAnalyst textAnalyst = new TextAnalyst();
+        List<string> sut = textAnalyst.Top10Words("This text contains ten words. sixth, seventh, eighth, ninth, tenth.");
+        
+        Assert.AreEqual(10, sut.Count);
+        Assert.AreEqual("this", sut[0]);
+        Assert.AreEqual("text", sut[1]);
+        Assert.AreEqual("contains", sut[2]);
+        Assert.AreEqual("ten", sut[3]);
+        Assert.AreEqual("words", sut[4]);
+        Assert.AreEqual("sixth", sut[5]);
+        Assert.AreEqual("seventh", sut[6]);
+        Assert.AreEqual("eighth", sut[7]);
+        Assert.AreEqual("ninth", sut[8]);
+        Assert.AreEqual("tenth", sut[9]);
+    }
 }

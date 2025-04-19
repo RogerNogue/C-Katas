@@ -7,8 +7,7 @@ namespace TextProcessing.Tests;
 
 /*
  * [x] analyst can count the words in a text
- * analyst finds the top 10 most frequent words. Ordered by occurrence but if same amount of occurrences, no order.
- * analyst is not case sensitive
+ * analyst finds the top 10 most frequent words. Ordered by occurrence but if same amount of occurrences, no order. Not case sensitive
  * Once done, there is a second challenge.
  */
 

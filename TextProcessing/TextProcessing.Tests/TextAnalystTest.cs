@@ -47,4 +47,12 @@ public class TextAnalystTest
         
         Assert.AreEqual(10, sut.CountWords("This text contains ten words sixth seventh eith ninth tenth"));
     }
+
+    [TestMethod]
+    public void Top10WordsIn10WordsText()
+    {
+        TextAnalyst sut = new TextAnalyst();
+        
+        Assert.AreEqual(10, sut.Top10Words("This text contains ten words sixth seventh eith ninth tenth.").Count);
+    }
 }

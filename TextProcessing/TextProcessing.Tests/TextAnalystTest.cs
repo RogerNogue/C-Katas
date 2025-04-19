@@ -31,4 +31,12 @@ public class TextAnalystTest
         
         Assert.AreEqual(1, sut.CountWords("Hello"));
     }
+
+    [TestMethod]
+    public void HelloHowAreYouIs4Words()
+    {
+        TextAnalyst sut = new TextAnalyst();
+        
+        Assert.AreEqual(4, sut.CountWords("Hello how are you"));
+    }
 }

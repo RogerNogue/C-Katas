@@ -28,7 +28,7 @@ public class TextAnalyst
             }
             else
             {
-                currentWord += letter;
+                currentWord += char.ToLower(letter);
             }
         }
         

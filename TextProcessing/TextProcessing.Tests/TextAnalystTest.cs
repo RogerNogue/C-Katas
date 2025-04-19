@@ -55,7 +55,7 @@ public class TextAnalystTest
         List<string> sut = textAnalyst.Top10Words("This text contains ten words sixth seventh eighth ninth tenth.");
         
         Assert.AreEqual(10, sut.Count);
-        Assert.AreEqual("This", sut[0]);
+        Assert.AreEqual("this", sut[0]);
         Assert.AreEqual("text", sut[1]);
         Assert.AreEqual("contains", sut[2]);
         Assert.AreEqual("ten", sut[3]);

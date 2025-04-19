@@ -5,7 +5,7 @@ using TextProcessing;
 namespace TextProcessing.Tests;
 
 /*
- * analyst can count the words in a text
+ * [x] analyst can count the words in a text
  * analyst finds the top 10 most frequent words. Ordered by occurrence but if same amount of occurrences, no order.
  * analyst is not case sensitive
  * Once done, there is a second challenge.
@@ -29,7 +29,7 @@ public class TextAnalystTest
     {
         TextAnalyst sut = new TextAnalyst();
         
-        Assert.AreEqual(1, sut.CountWords("Hello"));
+        Assert.AreEqual(1, sut.CountWords("Hello."));
     }
 
     [TestMethod]

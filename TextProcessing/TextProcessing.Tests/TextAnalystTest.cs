@@ -39,4 +39,12 @@ public class TextAnalystTest
         
         Assert.AreEqual(4, sut.CountWords("Hello how are you"));
     }
+
+    [TestMethod]
+    public void TextOf10Words()
+    {
+        TextAnalyst sut = new TextAnalyst();
+        
+        Assert.AreEqual(10, sut.CountWords("This text contains ten words sixth seventh eith ninth tenth"));
+    }
 }

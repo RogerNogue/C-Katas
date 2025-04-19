@@ -4,8 +4,13 @@ public class TextAnalyst
 {
     public int CountWords(string text)
     {
-        if (text == "Hello")
-            return 1;
-        return 4;
+        int wordCount = 0;
+
+        foreach (char letter in text)
+        {
+            if (letter == ' ')
+                wordCount++;
+        }
+        return wordCount+1;
     }
 }

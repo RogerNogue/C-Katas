@@ -27,10 +27,7 @@ public class TextAnalyst
         {
             if (IsWordLimiter(character, currentWord))
             {
-                if (!wordsWithOccurrences.TryAdd(currentWord, 1))
-                {
-                    wordsWithOccurrences[currentWord]++;
-                }
+                AddWord(currentWord);
                 currentWord = "";
             }
             else if (IsValidChar(character))
@@ -40,10 +37,15 @@ public class TextAnalyst
         }
         if (currentWord.Length > 0)
         {
-            if (!wordsWithOccurrences.TryAdd(currentWord, 1))
-            {
-                wordsWithOccurrences[currentWord]++;
-            }
+            AddWord(currentWord);
+        }
+    }
+
+    private void AddWord(string currentWord)
+    {
+        if (!wordsWithOccurrences.TryAdd(currentWord, 1))
+        {
+            wordsWithOccurrences[currentWord]++;
         }
     }
 

@@ -103,4 +103,15 @@ public class TextAnalystTest
         TextAnalyst sut = new TextAnalyst();
         Assert.AreEqual(21, sut.CountWords("Hello, this is an example for you to practice. You should grab this text and make it as your test case."));
     }
+
+    [TestMethod]
+    public void Top10WordsNotEndedInFullstop()
+    {
+        TextAnalyst textAnalyst = new TextAnalyst();
+        List<string> sut = textAnalyst.Top10Words("Hello, this is an example for you to practice. You should grab this text and make it as your test case you");
+        
+        Assert.AreEqual(10, sut.Count);
+        Assert.AreEqual("you", sut[0]);
+        Assert.AreEqual("this", sut[1]);
+    }
 }

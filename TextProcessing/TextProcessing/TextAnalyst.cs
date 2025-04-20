@@ -5,13 +5,23 @@ public class TextAnalyst
     public int CountWords(string text)
     {
         int wordCount = 0;
+        string currentWord = "";
 
-        foreach (char letter in text)
+        foreach (char character in text)
         {
-            if (letter == ' ')
+            if (IsWordLimiter(character, currentWord))
+            {
                 wordCount++;
+                currentWord = "";
+            }
+            else
+            {
+                currentWord += character;
+            }
         }
-        return wordCount+1;
+        if (currentWord.Length > 0)
+            wordCount++;
+        return wordCount;
     }
 
     public List<string> Top10Words(string text)
@@ -34,8 +44,15 @@ public class TextAnalyst
                 currentWord += char.ToLower(letter);
             }
         }
+        if (currentWord.Length > 0)
+            wordsWithOccurrences[currentWord]++;
         
         return wordsWithOccurrences.OrderByDescending(x => x.Value).Select(x => x.Key).ToList().Take(10).ToList();
+    }
+
+    private bool IsWordLimiter(char character, string currentWord)
+    {
+        return (character == ' ' || character == '.' || character == ',') && currentWord.Length > 0;
     }
 
     private bool IsValidChar(char letter)

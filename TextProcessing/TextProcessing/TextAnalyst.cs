@@ -30,7 +30,7 @@ public class TextAnalyst
                 AddWord(currentWord);
                 currentWord = "";
             }
-            else if (IsValidChar(character))
+            else if (IsCharacterPartOfWord(character))
             {
                 currentWord += char.ToLower(character);
             }
@@ -57,21 +57,11 @@ public class TextAnalyst
 
     private bool IsWordLimiter(char character, string currentWord)
     {
-        return !IsValidChar(character) && currentWord.Length > 0;
+        return !IsCharacterPartOfWord(character) && currentWord.Length > 0;
     }
 
-    private bool IsValidChar(char character)
+    private bool IsCharacterPartOfWord(char character)
     {
-        return IsNumber(character) || IsLetter(character);
-    }
-
-    private bool IsLetter(char character)
-    {
-        return char.ToLower(character) >= 'a' && char.ToLower(character) <= 'z';
-    }
-
-    private bool IsNumber(char character)
-    {
-        return character >= '0' && character <= '9';
+        return char.IsLetterOrDigit(character);
     }
 }

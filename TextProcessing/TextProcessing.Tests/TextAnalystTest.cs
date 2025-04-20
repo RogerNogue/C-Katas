@@ -96,4 +96,11 @@ public class TextAnalystTest
         Assert.AreEqual("this", sut[0]);
         Assert.AreEqual("you", sut[1]);
     }
+
+    [TestMethod]
+    public void ExampleStringHas21Words()
+    {
+        TextAnalyst sut = new TextAnalyst();
+        Assert.AreEqual(21, sut.CountWords("Hello, this is an example for you to practice. You should grab this text and make it as your test case."));
+    }
 }

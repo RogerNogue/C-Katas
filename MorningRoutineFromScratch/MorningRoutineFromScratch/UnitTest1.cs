@@ -8,6 +8,7 @@ public class Tests
         RoutineAssistant sut = new RoutineAssistant();
 
         sut.CurrentHour(6,30);
+        sut.AddRoutine("Do exercise", new TimeOnly(6, 0), new TimeOnly(6, 59));
         
         Assert.AreEqual(sut.WhatShouldIDo(), "Do exercise");
     }

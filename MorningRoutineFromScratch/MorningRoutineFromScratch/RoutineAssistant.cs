@@ -19,6 +19,11 @@ public class RoutineAssistant
     private TimeOnly currentTime;
     private List<RoutineActivity> routines = new List<RoutineActivity>();
 
+    public void AddRoutine(string activity, TimeOnly startTime, TimeOnly endTime)
+    {
+        routines.Add(new RoutineActivity(activity, startTime, endTime));
+    }
+    
     public void CurrentHour(int hour, int minute)
     {
         currentTime = new TimeOnly(hour, minute);

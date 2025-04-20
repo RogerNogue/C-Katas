@@ -19,6 +19,7 @@ public class Tests
         RoutineAssistant sut = new RoutineAssistant();
 
         sut.CurrentHour(7,30);
+        sut.AddRoutine("Read and study", new TimeOnly(7, 0), new TimeOnly(7, 59));
         
         Assert.AreEqual(sut.WhatShouldIDo(), "Read and study");
     }
@@ -29,6 +30,7 @@ public class Tests
         RoutineAssistant sut = new RoutineAssistant();
 
         sut.CurrentHour(8,30);
+        sut.AddRoutine("Have breakfast", new TimeOnly(8, 0), new TimeOnly(8, 59));
         
         Assert.AreEqual(sut.WhatShouldIDo(), "Have breakfast");
     }

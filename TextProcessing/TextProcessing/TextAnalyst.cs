@@ -16,7 +16,6 @@ public class TextAnalyst
 
     public List<string> Top10Words(string text)
     {
-        List<string> top10Words = new List<string>();
         Dictionary<string, int> wordsWithOccurrences = new Dictionary<string, int>();
         string currentWord = "";
         

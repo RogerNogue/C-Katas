@@ -2,14 +2,13 @@ namespace MorningRoutineFromScratch;
 
 public class Tests
 {
-    [SetUp]
-    public void Setup()
-    {
-    }
-
     [Test]
-    public void Test1()
+    public void DoExerciseBetween6And7()
     {
-        Assert.Pass();
+        RoutineAssistant sut = new RoutineAssistant();
+
+        sut.CurrentHour(6,30);
+        
+        Assert.AreEqual(sut.WhatShouldIDo(), "Do exercise");
     }
 }

@@ -45,7 +45,7 @@ public class TextAnalystTest
     {
         TextAnalyst sut = new TextAnalyst();
         
-        Assert.AreEqual(10, sut.CountWords("This text contains ten words sixth seventh eith ninth tenth"));
+        Assert.AreEqual(10, sut.CountWords("This text contains ten words sixth seventh eigth ninth tenth"));
     }
 
     [TestMethod]

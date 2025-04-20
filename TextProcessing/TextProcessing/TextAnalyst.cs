@@ -29,9 +29,9 @@ public class TextAnalyst
         Dictionary<string, int> wordsWithOccurrences = new Dictionary<string, int>();
         string currentWord = "";
         
-        foreach (char letter in text)
+        foreach (char character in text)
         {
-            if ((letter == ' ' || letter == '.' || letter == ',' ) && currentWord.Length > 0)
+            if (IsWordLimiter(character, currentWord))
             {
                 if (!wordsWithOccurrences.TryAdd(currentWord, 1))
                 {
@@ -39,9 +39,9 @@ public class TextAnalyst
                 }
                 currentWord = "";
             }
-            else if (IsValidChar(letter))
+            else if (IsValidChar(character))
             {
-                currentWord += char.ToLower(letter);
+                currentWord += char.ToLower(character);
             }
         }
         if (currentWord.Length > 0)

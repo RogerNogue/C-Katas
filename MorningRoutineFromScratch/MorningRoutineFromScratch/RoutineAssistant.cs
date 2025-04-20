@@ -16,6 +16,6 @@ public class RoutineAssistant
             return "Read and study";
         if (currentTime.Hour == 8)
             return "Have breakfast";
-        return "";
+        return "Do nothing";
     }
 }

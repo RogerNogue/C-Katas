@@ -31,4 +31,14 @@ public class Tests
         
         Assert.AreEqual(sut.WhatShouldIDo(), "Have breakfast");
     }
+    
+    [Test]
+    public void NoActivityAtOtherTimes()
+    {
+        RoutineAssistant sut = new RoutineAssistant();
+
+        sut.CurrentHour(9,30);
+        
+        Assert.AreEqual(sut.WhatShouldIDo(), "Do nothing");
+    }
 }

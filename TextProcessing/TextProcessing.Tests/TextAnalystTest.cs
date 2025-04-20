@@ -114,4 +114,15 @@ public class TextAnalystTest
         Assert.AreEqual("you", sut[0]);
         Assert.AreEqual("this", sut[1]);
     }
+
+    [TestMethod]
+    public void Top10Words()
+    {
+        TextAnalyst textAnalyst = new TextAnalyst();
+        List<string> sut = textAnalyst.Top10Words("Hello, this is an example for 12 to practice. 12 should grab this text and make it as your test case 12");
+        
+        Assert.AreEqual(10, sut.Count);
+        Assert.AreEqual("12", sut[0]);
+        Assert.AreEqual("this", sut[1]);
+    }
 }

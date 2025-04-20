@@ -57,7 +57,7 @@ public class TextAnalyst
 
     private bool IsWordLimiter(char character, string currentWord)
     {
-        return (character == ' ' || character == '.' || character == ',') && currentWord.Length > 0;
+        return !IsValidChar(character) && currentWord.Length > 0;
     }
 
     private bool IsValidChar(char letter)

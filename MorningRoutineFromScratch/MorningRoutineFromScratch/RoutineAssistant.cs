@@ -2,12 +2,18 @@ namespace MorningRoutineFromScratch;
 
 public class RoutineAssistant
 {
+    private TimeOnly currentTime;
     public void CurrentHour(int hour, int minute)
     {
+        currentTime = new TimeOnly(hour, minute);
     }
 
-    public object? WhatShouldIDo()
+    public string WhatShouldIDo()
     {
-        return "Do exercise";
+        if (currentTime.Hour == 6)
+            return "Do exercise";
+        if (currentTime.Hour == 7)
+            return "Read and study";
+        return "";
     }
 }

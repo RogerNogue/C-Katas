@@ -60,18 +60,18 @@ public class TextAnalyst
         return !IsValidChar(character) && currentWord.Length > 0;
     }
 
-    private bool IsValidChar(char letter)
+    private bool IsValidChar(char character)
     {
-        return IsNumber(letter) || IsLetter(letter);
+        return IsNumber(character) || IsLetter(character);
     }
 
-    private bool IsLetter(char letter)
+    private bool IsLetter(char character)
     {
-        return char.ToLower(letter) >= 'a' && char.ToLower(letter) <= 'z';
+        return char.ToLower(character) >= 'a' && char.ToLower(character) <= 'z';
     }
 
-    private bool IsNumber(char letter)
+    private bool IsNumber(char character)
     {
-        return letter >= '0' && letter <= '9';
+        return character >= '0' && character <= '9';
     }
 }

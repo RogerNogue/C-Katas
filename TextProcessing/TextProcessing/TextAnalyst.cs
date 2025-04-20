@@ -3,24 +3,24 @@ namespace TextProcessing;
 public class TextAnalyst
 {
     private string text;
+    private Dictionary<string, int> wordsWithOccurrences;
     public int CountWords(string text)
     {
-        this.text = text;
-        int wordCount = AnalyzeText().Sum(word => word.Value);
+        InitializeAnalysis(text);
+        AnalyzeText();
+        int wordCount = wordsWithOccurrences.Sum(word => word.Value);
         return wordCount;
     }
 
     public List<string> Top10Words(string text)
     {
-        this.text = text;
-
-        Dictionary<string, int> wordsWithOccurrences = AnalyzeText();
+        InitializeAnalysis(text);
+        AnalyzeText();
         return wordsWithOccurrences.OrderByDescending(x => x.Value).Select(x => x.Key).ToList().Take(10).ToList();
     }
 
-    private Dictionary<string, int> AnalyzeText()
+    private void AnalyzeText()
     {
-        Dictionary<string, int> wordsWithOccurrences = new Dictionary<string, int>();
         string currentWord = "";
         
         foreach (char character in text)
@@ -45,7 +45,12 @@ public class TextAnalyst
                 wordsWithOccurrences[currentWord]++;
             }
         }
-        return wordsWithOccurrences;
+    }
+
+    private void InitializeAnalysis(string text)
+    {
+        this.text = text;
+        wordsWithOccurrences = new Dictionary<string, int>();
     }
 
     private bool IsWordLimiter(char character, string currentWord)

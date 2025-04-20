@@ -36,11 +36,11 @@ public class RoutineAssistant
 
     public string WhatShouldIDo()
     {
-        foreach (RoutineActivity routine in routines)
+        foreach (var routine in routines.Where(routine => routine.IsTimeForActivity(currentTime)))
         {
-            if (routine.IsTimeForActivity(currentTime))
-                return routine.Activity;
+            return routine.Activity;
         }
+
         return "Do nothing";
     }
 }

@@ -44,4 +44,17 @@ public class Tests
         
         Assert.AreEqual(sut.WhatShouldIDo(), "Do nothing");
     }
+
+    [Test]
+    public void TakeAShowerInFullDayOfRoutines()
+    {
+        RoutineAssistant sut = new RoutineAssistant();
+
+        sut.CurrentHour(6,45);
+        sut.AddRoutine("Do exercise", new TimeOnly(6, 0), new TimeOnly(6, 44));
+        sut.AddRoutine("Take a shower", new TimeOnly(6, 45), new TimeOnly(6, 59));
+        sut.AddRoutine("Read", new TimeOnly(7, 0), new TimeOnly(7, 59));
+        
+        Assert.AreEqual(sut.WhatShouldIDo(), "Take a shower");
+    }
 }

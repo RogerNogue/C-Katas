@@ -1,8 +1,24 @@
 namespace MorningRoutineFromScratch;
 
+public class RoutineActivity
+{
+    private string Activity;
+    private TimeOnly StartTime;
+    private TimeOnly EndTime;
+
+    public RoutineActivity(string activity, TimeOnly startTime, TimeOnly endTime)
+    {
+        Activity = activity;
+        StartTime = startTime;
+        EndTime = endTime;
+    }
+}
+
 public class RoutineAssistant
 {
     private TimeOnly currentTime;
+    private List<RoutineActivity> routines = new List<RoutineActivity>();
+
     public void CurrentHour(int hour, int minute)
     {
         currentTime = new TimeOnly(hour, minute);

@@ -85,4 +85,15 @@ public class TextAnalystTest
         Assert.AreEqual("ninth", sut[8]);
         Assert.AreEqual("tenth", sut[9]);
     }
+
+    [TestMethod]
+    public void Top10WordsInExampleText()
+    {
+        TextAnalyst textAnalyst = new TextAnalyst();
+        List<string> sut = textAnalyst.Top10Words("Hello, this is an example for you to practice. You should grab this text and make it as your test case.");
+        
+        Assert.AreEqual(10, sut.Count);
+        Assert.AreEqual("this", sut[0]);
+        Assert.AreEqual("you", sut[1]);
+    }
 }

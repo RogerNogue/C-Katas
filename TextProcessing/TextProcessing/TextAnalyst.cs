@@ -17,13 +17,17 @@ public class TextAnalyst
     public List<string> Top10Words(string text)
     {
         List<string> top10Words = new List<string>();
+        Dictionary<string, int> wordsWithOccurrences = new Dictionary<string, int>();
         string currentWord = "";
         
         foreach (char letter in text)
         {
             if ((letter == ' ' || letter == '.' || letter == ',' ) && currentWord.Length > 0)
             {
-                top10Words.Add(currentWord);
+                if (!wordsWithOccurrences.TryAdd(currentWord, 1))
+                {
+                    wordsWithOccurrences[currentWord]++;
+                }
                 currentWord = "";
             }
             else if (IsValidChar(letter))
@@ -32,7 +36,7 @@ public class TextAnalyst
             }
         }
         
-        return top10Words;
+        return wordsWithOccurrences.OrderByDescending(x => x.Value).Select(x => x.Key).ToList().Take(10).ToList();
     }
 
     private bool IsValidChar(char letter)

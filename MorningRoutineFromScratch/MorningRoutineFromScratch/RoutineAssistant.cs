@@ -2,7 +2,7 @@ namespace MorningRoutineFromScratch;
 
 public class RoutineActivity
 {
-    private string Activity;
+    public string Activity;
     private TimeOnly StartTime;
     private TimeOnly EndTime;
 
@@ -11,6 +11,11 @@ public class RoutineActivity
         Activity = activity;
         StartTime = startTime;
         EndTime = endTime;
+    }
+
+    public bool IsTimeForActivity(TimeOnly time)
+    {
+        return time >= StartTime && time <= EndTime;
     }
 }
 
@@ -31,12 +36,11 @@ public class RoutineAssistant
 
     public string WhatShouldIDo()
     {
-        if (currentTime.Hour == 6)
-            return "Do exercise";
-        if (currentTime.Hour == 7)
-            return "Read and study";
-        if (currentTime.Hour == 8)
-            return "Have breakfast";
+        foreach (RoutineActivity routine in routines)
+        {
+            if (routine.IsTimeForActivity(currentTime))
+                return routine.Activity;
+        }
         return "Do nothing";
     }
 }

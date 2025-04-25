@@ -6,13 +6,20 @@ public class Character
     private readonly int maxHealth = 1000;
     public int Level { get; private set; } = 1;
     public bool Alive() => Health > 0;
+    public int Range;
 
-    public Character()
+    private Character(int range)
     {
+        Range = range;
         Health = maxHealth;
     }
 
-    public static Character OtherCharacter => new();
+    public static Character MeleeCharacter()
+    {
+        return new Character(2);
+    }
+
+    public static Character ACharacter => MeleeCharacter();
 
     public void LevelUp(int levels)
     {

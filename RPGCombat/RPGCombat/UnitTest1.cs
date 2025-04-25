@@ -6,7 +6,7 @@ public class Tests
     [Test]
     public void StartingHealthIs1000()
     {
-        Character sut = new Character();
+        Character sut = ACharacter;
         
         Assert.AreEqual(sut.Health, 1000);
     }
@@ -14,7 +14,7 @@ public class Tests
     [Test]
     public void StartingLevelIs1()
     {
-        Character sut = new Character();
+        Character sut = ACharacter;
         
         Assert.AreEqual(sut.Level, 1);
     }
@@ -22,7 +22,7 @@ public class Tests
     [Test]
     public void StartsAlive()
     {
-        Character sut = new Character();
+        Character sut = ACharacter;
         
         Assert.AreEqual(sut.Alive(), true);
     }
@@ -30,9 +30,9 @@ public class Tests
     [Test]
     public void Deal100Damage()
     {
-        Character sut = new Character();
+        Character sut = ACharacter;
 
-        OtherCharacter.Harm(sut, 100);
+        ACharacter.Harm(sut, 100);
         
         Assert.AreEqual(sut.Health, 900);
     }
@@ -40,9 +40,9 @@ public class Tests
     [Test]
     public void HealthGoesNoLowerThan0()
     {
-        Character sut = new Character();
+        Character sut = ACharacter;
 
-        OtherCharacter.Harm(sut, 10000);
+        ACharacter.Harm(sut, 10000);
         
         Assert.AreEqual(sut.Health, 0);
     }
@@ -50,9 +50,9 @@ public class Tests
     [Test]
     public void IsNotAliveWhenHealthIsZero()
     {
-        Character sut = new Character();
+        Character sut = ACharacter;
 
-        OtherCharacter.Harm(sut, 1000);
+        ACharacter.Harm(sut, 1000);
         
         Assert.AreEqual(sut.Alive(), false);
     }
@@ -60,9 +60,9 @@ public class Tests
     [Test]
     public void HealIncreasesHealth()
     {
-        Character sut = new Character();
+        Character sut = ACharacter;
 
-        OtherCharacter.Harm(sut, 100);
+        ACharacter.Harm(sut, 100);
         sut.Heal(sut, 100);
         
         Assert.AreEqual(sut.Health, 1000);
@@ -71,7 +71,7 @@ public class Tests
     [Test]
     public void HealDoesNotGoAbove1000()
     {
-        Character sut = new Character();
+        Character sut = ACharacter;
         
         sut.Heal(sut, 100);
         
@@ -81,7 +81,7 @@ public class Tests
     [Test]
     public void CharacterCanLevelUp()
     {
-        Character sut = new Character();
+        Character sut = ACharacter;
         sut.LevelUp(5);
         
         Assert.AreEqual(sut.Level, 6);
@@ -90,10 +90,10 @@ public class Tests
     [Test]
     public void IfHarmTargetIs5LevelsAbove50percentLessDamage()
     {
-        Character sut = new Character();
+        Character sut = ACharacter;
         
         sut.LevelUp(5);
-        OtherCharacter.Harm(sut, 100);
+        ACharacter.Harm(sut, 100);
         
         Assert.AreEqual(sut.Health, 950);
     }
@@ -101,8 +101,8 @@ public class Tests
     [Test]
     public void IfHarmDealerIs5LevelsAbove50percentMoreDamage()
     {
-        Character sut = new Character();
-        Character other = OtherCharacter;
+        Character sut = ACharacter;
+        Character other = ACharacter;
         
         other.LevelUp(5);
         other.Harm(sut, 100);
@@ -113,7 +113,7 @@ public class Tests
     [Test]
     public void CharacterCanNotHarmItself()
     {
-        Character sut = new Character();
+        Character sut = ACharacter;
         
         Assert.Catch<InvalidOperationException>(() => sut.Harm(sut, 100));
     }
@@ -121,20 +121,30 @@ public class Tests
     [Test]
     public void CharacterCanOnlyHealItself()
     {
-        Character sut = new Character();
+        Character sut = ACharacter;
         
-        OtherCharacter.Harm(sut, 100);
+        ACharacter.Harm(sut, 100);
         
-        Assert.Catch<InvalidOperationException>(() => OtherCharacter.Heal(sut, 100));
+        Assert.Catch<InvalidOperationException>(() => ACharacter.Heal(sut, 100));
     }
     
     [Test]
     public void OnlyAliveTargetsCanBeHealed()
     {
-        Character sut = new Character();
+        Character sut = ACharacter;
+        
+        ACharacter.Harm(sut, 1000);
+        
+        Assert.Catch<InvalidOperationException>(() => sut.Heal(sut, 100));
+    }
+    
+    /*[Test]
+    public void MeleeInRange3CannotAttack()
+    {
+        Character sut = MeleeCharacter();
         
         OtherCharacter.Harm(sut, 1000);
         
         Assert.Catch<InvalidOperationException>(() => sut.Heal(sut, 100));
-    }
+    }*/
 }

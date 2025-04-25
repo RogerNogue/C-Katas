@@ -23,7 +23,11 @@ public class Character
     {
         if (this == target)
             throw new InvalidOperationException("A Character cannot Deal Damage to itself.");
-        target.Health -= int.Min(damage, Health);
+        
+        int dealtDamage = damage;
+        if ( target.Level >= Level + 5 )
+            dealtDamage = (int)(dealtDamage * 0.5f);
+        target.Health -= int.Min(dealtDamage, Health);
     }
     
     public void Heal(Character target, int amount)

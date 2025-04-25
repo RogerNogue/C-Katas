@@ -7,4 +7,9 @@ public class Character
     {
         return 1000;
     }
+
+    public int Level()
+    {
+        return 1;
+    }
 }

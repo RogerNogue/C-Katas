@@ -31,6 +31,6 @@ public class Character
 
     public void Heal(int amount)
     {
-        health += amount;
+        health = int.Min(1000, health + amount);
     }
 }

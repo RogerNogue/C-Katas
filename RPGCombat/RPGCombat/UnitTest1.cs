@@ -66,4 +66,14 @@ public class Tests
         
         Assert.AreEqual(sut.Health(), 1000);
     }
+    
+    [Test]
+    public void HealDoesNotGoAbove1000()
+    {
+        Character sut = new Character();
+        
+        sut.Heal(100);
+        
+        Assert.AreEqual(sut.Health(), 1000);
+    }
 }

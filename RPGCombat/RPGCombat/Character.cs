@@ -29,11 +29,15 @@ public class Character
 
     public void Harm(Character target, int damage)
     {
+        if (this == target)
+            throw new InvalidOperationException("A Character cannot Deal Damage to itself.");
         target.health -= int.Min(damage, health);
     }
     
     public void Heal(Character target, int amount)
     {
+        if (!target.Alive())
+            throw new InvalidOperationException("Dead characters cannot be healed.");
         target.health = int.Min(maxHealth, target.health + amount);
     }
 }

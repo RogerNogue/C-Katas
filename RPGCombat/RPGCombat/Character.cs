@@ -38,6 +38,8 @@ public class Character
     {
         if (!target.Alive())
             throw new InvalidOperationException("Dead characters cannot be healed.");
+        if (this != target)
+            throw new InvalidOperationException("A Character can only heal itself");
         target.health = int.Min(maxHealth, target.health + amount);
     }
 }

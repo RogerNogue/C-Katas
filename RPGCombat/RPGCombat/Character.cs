@@ -34,9 +34,9 @@ public class Character
     {
         target.health -= int.Min(damage, health);
     }
-
-    public void Heal(int amount)
+    
+    public void Heal(Character target, int amount)
     {
-        health = int.Min(maxHealth, health + amount);
+        target.health = int.Min(maxHealth, target.health + amount);
     }
 }

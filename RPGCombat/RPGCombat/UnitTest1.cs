@@ -62,7 +62,7 @@ public class Tests
         Character sut = new Character();
 
         Character.OtherCharacter().Harm(sut, 100);
-        sut.Heal(100);
+        Character.OtherCharacter().Heal(sut, 100);
         
         Assert.AreEqual(sut.Health(), 1000);
     }
@@ -72,7 +72,7 @@ public class Tests
     {
         Character sut = new Character();
         
-        sut.Heal(100);
+        Character.OtherCharacter().Heal(sut, 100);
         
         Assert.AreEqual(sut.Health(), 1000);
     }

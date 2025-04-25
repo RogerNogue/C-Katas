@@ -2,9 +2,9 @@ namespace RPGCombat;
 
 public class Character
 {
-    public int Health;
+    public int Health { get; private set; }
     private readonly int maxHealth = 1000;
-    public int Level = 1;
+    public int Level { get; private set; } = 1;
     public bool Alive() => Health > 0;
 
     public Character()

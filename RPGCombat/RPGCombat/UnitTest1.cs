@@ -145,7 +145,15 @@ public class Tests
 
         sut.Move(new Position(1, 1));
         
-        Assert.AreEqual(sut.Position == new Position(1, 1), true );
+        Assert.IsTrue(sut.Position == new Position(1, 1));
+    }
+    
+    [Test]
+    public void SamePositionsHave0Distance()
+    {
+        Position sut = new Position(1, 1);
+        
+        Assert.IsTrue(sut.DistanceTo(new Position(1, 1)) == 0);
     }
     
     /*[Test]

@@ -20,6 +20,11 @@ public class Position
     {
         return ! (p1 == p2);
     }
+
+    public int DistanceTo(Position otherPosition)
+    {
+        return Math.Abs(X - otherPosition.X) + Math.Abs(Y - otherPosition.Y);
+    }
 }    
     
 

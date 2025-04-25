@@ -16,7 +16,7 @@ public class Tests
     {
         Character sut = new Character();
         
-        Assert.AreEqual(sut.Level(), 1);
+        Assert.AreEqual(sut.Level, 1);
     }
     
     [Test]
@@ -84,6 +84,6 @@ public class Tests
         Character sut = new Character();
         sut.LevelUp(5);
         
-        Assert.AreEqual(sut.Level(), 6);
+        Assert.AreEqual(sut.Level, 6);
     }
 }

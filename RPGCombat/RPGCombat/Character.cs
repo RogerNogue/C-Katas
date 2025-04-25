@@ -4,7 +4,7 @@ public class Character
 {
     public int Health;
     private readonly int maxHealth = 1000;
-    private int level = 1;
+    public int Level = 1;
     public bool Alive() => Health > 0;
 
     public Character()
@@ -13,11 +13,6 @@ public class Character
     }
 
     public static Character OtherCharacter => new();
-
-    public int Level()
-    {
-        return level;
-    }
 
     public void LevelUp(int levels)
     {

@@ -3,10 +3,11 @@ namespace RPGCombat;
 public class Character
 {
     private int health;
+    private readonly int maxHealth = 1000;
 
     public Character()
     {
-        health = 1000;
+        health = maxHealth;
     }
     
     public int Health()
@@ -31,6 +32,6 @@ public class Character
 
     public void Heal(int amount)
     {
-        health = int.Min(1000, health + amount);
+        health = int.Min(maxHealth, health + amount);
     }
 }

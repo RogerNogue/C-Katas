@@ -28,4 +28,9 @@ public class Character
     {
         health -= int.Min(damage, health);
     }
+
+    public void Heal(int amount)
+    {
+        health += amount;
+    }
 }

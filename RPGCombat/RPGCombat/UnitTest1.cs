@@ -55,4 +55,15 @@ public class Tests
         
         Assert.AreEqual(sut.Alive(), false);
     }
+    
+    [Test]
+    public void HealIncreasesHealth()
+    {
+        Character sut = new Character();
+
+        sut.Harm(100);
+        sut.Heal(100);
+        
+        Assert.AreEqual(sut.Health(), 1000);
+    }
 }

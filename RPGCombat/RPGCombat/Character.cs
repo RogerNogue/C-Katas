@@ -1,5 +1,28 @@
 namespace RPGCombat;
 
+public class Position
+{
+    public int X { get; set; }
+    public int Y { get; set; }
+
+    public Position(int x, int y)
+    {
+        X = x;
+        Y = y;
+    }
+
+    public static bool operator ==(Position p1, Position p2)
+    {
+        return p1.X == p2.X && p1.Y == p2.Y;
+    }
+
+    public static bool operator !=(Position p1, Position p2)
+    {
+        return ! (p1 == p2);
+    }
+}    
+    
+
 public class Character
 {
     public int Health { get; private set; }
@@ -7,6 +30,7 @@ public class Character
     public int Level { get; private set; } = 1;
     public bool Alive() => Health > 0;
     public int Range;
+    public Position Position { get; private set; }
 
     private Character(int range)
     {
@@ -51,5 +75,10 @@ public class Character
         if (this != target)
             throw new InvalidOperationException("A Character can only heal itself");
         target.Health = int.Min(maxHealth, target.Health + amount);
+    }
+
+    public void Move(Position position)
+    {
+        Position = position;
     }
 }

@@ -138,6 +138,16 @@ public class Tests
         Assert.Catch<InvalidOperationException>(() => sut.Heal(sut, 100));
     }
     
+    [Test]
+    public void CharacterCanMove()
+    {
+        Character sut = ACharacter;
+
+        sut.Move(new Position(1, 1));
+        
+        Assert.AreEqual(sut.Position == new Position(1, 1), true );
+    }
+    
     /*[Test]
     public void MeleeInRange3CannotAttack()
     {

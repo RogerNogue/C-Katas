@@ -77,4 +77,13 @@ public class Tests
         
         Assert.AreEqual(sut.Health(), 1000);
     }
+    
+    [Test]
+    public void CharacterCanLevelUp()
+    {
+        Character sut = new Character();
+        sut.LevelUp(5);
+        
+        Assert.AreEqual(sut.Level(), 6);
+    }
 }

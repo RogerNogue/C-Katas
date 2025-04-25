@@ -4,6 +4,7 @@ public class Character
 {
     private int health;
     private readonly int maxHealth = 1000;
+    private int level = 1;
 
     public Character()
     {
@@ -19,12 +20,17 @@ public class Character
 
     public int Level()
     {
-        return 1;
+        return level;
     }
 
     public bool Alive()
     {
         return health > 0;
+    }
+
+    public void LevelUp(int levels)
+    {
+        levels += levels;
     }
 
     public void Harm(Character target, int damage)

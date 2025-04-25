@@ -35,4 +35,14 @@ public class Tests
         
         Assert.AreEqual(sut.Health(), 900);
     }
+    
+    [Test]
+    public void HealthGoesNoLowerThan0()
+    {
+        Character sut = new Character();
+
+        sut.Harm(10000);
+        
+        Assert.AreEqual(sut.Health(), 0);
+    }
 }

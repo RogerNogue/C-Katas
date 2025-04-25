@@ -26,6 +26,6 @@ public class Character
 
     public void Harm(int damage)
     {
-        health -= damage;
+        health -= int.Min(damage, health);
     }
 }

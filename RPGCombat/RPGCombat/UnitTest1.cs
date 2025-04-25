@@ -165,12 +165,36 @@ public class Tests
     }
     
     [Test]
-    public void MeleeInRange3CannotAttack()
+    public void MeleeInRange3DonesNotDealDamage()
     {
         Character sut = MeleeCharacter();
         
         sut.Move(new Position(3, 2));
         ACharacter.Harm(sut, 100);
+        
+        Assert.AreEqual(sut.Health, 1000);
+    }
+    
+    [Test]
+    public void RangedAtRange20DealsDamage()
+    {
+        Character sut = MeleeCharacter();
+        Character ranged = RangedCharacter();
+        
+        sut.Move(new Position(20, 0));
+        ranged.Harm(sut, 100);
+        
+        Assert.AreEqual(sut.Health, 900);
+    }
+    
+    [Test]
+    public void RangedAtRange21DoesNotDealDamage()
+    {
+        Character sut = MeleeCharacter();
+        Character ranged = RangedCharacter();
+        
+        sut.Move(new Position(21, 0));
+        ranged.Harm(sut, 100);
         
         Assert.AreEqual(sut.Health, 1000);
     }

@@ -127,4 +127,14 @@ public class Tests
         
         Assert.Catch<InvalidOperationException>(() => OtherCharacter.Heal(sut, 100));
     }
+    
+    [Test]
+    public void OnlyAliveTargetsCanBeHealed()
+    {
+        Character sut = new Character();
+        
+        OtherCharacter.Harm(sut, 1000);
+        
+        Assert.Catch<InvalidOperationException>(() => sut.Heal(sut, 100));
+    }
 }

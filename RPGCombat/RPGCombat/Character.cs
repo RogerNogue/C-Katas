@@ -18,6 +18,11 @@ public class Character
     {
         return new Character(2);
     }
+    
+    public static Character RangedCharacter()
+    {
+        return new Character(20);
+    }
 
     public static Character ACharacter => MeleeCharacter();
 

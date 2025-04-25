@@ -16,7 +16,7 @@ public class Character
 
     public void LevelUp(int levels)
     {
-        levels += levels;
+        Level += levels;
     }
 
     public void Harm(Character target, int damage)

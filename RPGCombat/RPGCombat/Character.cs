@@ -1,33 +1,5 @@
 namespace RPGCombat;
 
-public class Position
-{
-    public int X { get; set; }
-    public int Y { get; set; }
-
-    public Position(int x, int y)
-    {
-        X = x;
-        Y = y;
-    }
-
-    public static bool operator ==(Position p1, Position p2)
-    {
-        return p1.X == p2.X && p1.Y == p2.Y;
-    }
-
-    public static bool operator !=(Position p1, Position p2)
-    {
-        return ! (p1 == p2);
-    }
-
-    public int DistanceTo(Position otherPosition)
-    {
-        return Math.Abs(X - otherPosition.X) + Math.Abs(Y - otherPosition.Y);
-    }
-}    
-    
-
 public class Character
 {
     public int Health { get; private set; }
@@ -41,6 +13,7 @@ public class Character
     {
         Range = range;
         Health = maxHealth;
+        Position = new Position(0, 0);
     }
 
     public static Character MeleeCharacter()
@@ -64,6 +37,9 @@ public class Character
     {
         if (this == target)
             throw new InvalidOperationException("A Character cannot Deal Damage to itself.");
+
+        if (this.Position.DistanceTo(target.Position) > Range)
+            return;
         
         int dealtDamage = damage;
         if ( target.Level >= Level + 5 )

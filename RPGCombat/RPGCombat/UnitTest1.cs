@@ -164,13 +164,14 @@ public class Tests
         Assert.IsTrue(sut.DistanceTo(new Position(4, 3)) == 5);
     }
     
-    /*[Test]
+    [Test]
     public void MeleeInRange3CannotAttack()
     {
         Character sut = MeleeCharacter();
         
-        OtherCharacter.Harm(sut, 1000);
+        sut.Move(new Position(3, 2));
+        ACharacter.Harm(sut, 100);
         
-        Assert.Catch<InvalidOperationException>(() => sut.Heal(sut, 100));
-    }*/
+        Assert.AreEqual(sut.Health, 1000);
+    }
 }

@@ -9,6 +9,11 @@ public class Character
     {
         health = maxHealth;
     }
+
+    public static Character OtherCharacter()
+    {
+        return new Character();   
+    }
     
     public int Health()
     {
@@ -25,9 +30,9 @@ public class Character
         return health > 0;
     }
 
-    public void Harm(int damage)
+    public void Harm(Character target, int damage)
     {
-        health -= int.Min(damage, health);
+        target.health -= int.Min(damage, health);
     }
 
     public void Heal(int amount)

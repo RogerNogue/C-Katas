@@ -3,8 +3,10 @@ namespace RPGCombat;
 public class Tests
 {
     [Test]
-    public void Test1()
+    public void HealthStartsAt1000()
     {
-        Assert.Pass();
+        Character sut = new Character();
+        
+        Assert.AreEqual(sut.Health(), 1000);
     }
 }

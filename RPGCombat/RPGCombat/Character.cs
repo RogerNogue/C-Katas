@@ -21,7 +21,7 @@ public class Character
 
     public bool IsAlive()
     {
-        return true;
+        return health > 0;
     }
 
     public void Harm(int damage)

@@ -109,4 +109,12 @@ public class Tests
         
         Assert.AreEqual(sut.Health, 850);
     }
+
+    [Test]
+    public void CharacterCanNotHarmItself()
+    {
+        Character sut = new Character();
+        
+        Assert.Catch<InvalidOperationException>(() => sut.Harm(sut, 100));
+    }
 }

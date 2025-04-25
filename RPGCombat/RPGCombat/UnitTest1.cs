@@ -97,4 +97,16 @@ public class Tests
         
         Assert.AreEqual(sut.Health, 950);
     }
+    
+    [Test]
+    public void IfHarmDealerIs5LevelsAbove50percentMoreDamage()
+    {
+        Character sut = new Character();
+        Character other = OtherCharacter;
+        
+        other.LevelUp(5);
+        other.Harm(sut, 100);
+        
+        Assert.AreEqual(sut.Health, 850);
+    }
 }

@@ -27,6 +27,8 @@ public class Character
         int dealtDamage = damage;
         if ( target.Level >= Level + 5 )
             dealtDamage = (int)(dealtDamage * 0.5f);
+        if( Level >= target.Level + 5 )
+            dealtDamage = (int)(dealtDamage * 1.5f);
         target.Health -= int.Min(dealtDamage, Health);
     }
     

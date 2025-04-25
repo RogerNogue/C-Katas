@@ -19,7 +19,7 @@ public class Character
         return 1;
     }
 
-    public bool IsAlive()
+    public bool Alive()
     {
         return health > 0;
     }

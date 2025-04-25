@@ -23,7 +23,7 @@ public class Tests
     {
         Character sut = new Character();
         
-        Assert.AreEqual(sut.IsAlive(), true);
+        Assert.AreEqual(sut.Alive(), true);
     }
     
     [Test]
@@ -53,6 +53,6 @@ public class Tests
 
         sut.Harm(1000);
         
-        Assert.AreEqual(sut.IsAlive(), false);
+        Assert.AreEqual(sut.Alive(), false);
     }
 }

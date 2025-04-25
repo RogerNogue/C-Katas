@@ -8,7 +8,7 @@ public class Tests
     {
         Character sut = new Character();
         
-        Assert.AreEqual(sut.Health(), 1000);
+        Assert.AreEqual(sut.Health, 1000);
     }
 
     [Test]
@@ -34,7 +34,7 @@ public class Tests
 
         OtherCharacter.Harm(sut, 100);
         
-        Assert.AreEqual(sut.Health(), 900);
+        Assert.AreEqual(sut.Health, 900);
     }
     
     [Test]
@@ -44,7 +44,7 @@ public class Tests
 
         OtherCharacter.Harm(sut, 10000);
         
-        Assert.AreEqual(sut.Health(), 0);
+        Assert.AreEqual(sut.Health, 0);
     }
     
     [Test]
@@ -65,7 +65,7 @@ public class Tests
         OtherCharacter.Harm(sut, 100);
         sut.Heal(sut, 100);
         
-        Assert.AreEqual(sut.Health(), 1000);
+        Assert.AreEqual(sut.Health, 1000);
     }
     
     [Test]
@@ -75,7 +75,7 @@ public class Tests
         
         sut.Heal(sut, 100);
         
-        Assert.AreEqual(sut.Health(), 1000);
+        Assert.AreEqual(sut.Health, 1000);
     }
     
     [Test]

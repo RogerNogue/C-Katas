@@ -12,4 +12,9 @@ public class Character
     {
         return 1;
     }
+
+    public bool IsAlive()
+    {
+        return true;
+    }
 }

@@ -17,4 +17,12 @@ public class Tests
         
         Assert.AreEqual(sut.Level(), 1);
     }
+    
+    [Test]
+    public void StartsAlive()
+    {
+        Character sut = new Character();
+        
+        Assert.AreEqual(sut.IsAlive(), true);
+    }
 }

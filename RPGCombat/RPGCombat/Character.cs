@@ -10,11 +10,8 @@ public class Character
         health = maxHealth;
     }
 
-    public static Character OtherCharacter()
-    {
-        return new Character();   
-    }
-    
+    public static Character OtherCharacter => new();
+
     public int Health()
     {
         return health;

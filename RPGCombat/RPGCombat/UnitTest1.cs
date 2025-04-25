@@ -31,7 +31,7 @@ public class Tests
     {
         Character sut = new Character();
 
-        Character.OtherCharacter().Harm(sut, 100);
+        Character.OtherCharacter.Harm(sut, 100);
         
         Assert.AreEqual(sut.Health(), 900);
     }
@@ -41,7 +41,7 @@ public class Tests
     {
         Character sut = new Character();
 
-        Character.OtherCharacter().Harm(sut, 10000);
+        Character.OtherCharacter.Harm(sut, 10000);
         
         Assert.AreEqual(sut.Health(), 0);
     }
@@ -51,7 +51,7 @@ public class Tests
     {
         Character sut = new Character();
 
-        Character.OtherCharacter().Harm(sut, 1000);
+        Character.OtherCharacter.Harm(sut, 1000);
         
         Assert.AreEqual(sut.Alive(), false);
     }
@@ -61,8 +61,8 @@ public class Tests
     {
         Character sut = new Character();
 
-        Character.OtherCharacter().Harm(sut, 100);
-        Character.OtherCharacter().Heal(sut, 100);
+        Character.OtherCharacter.Harm(sut, 100);
+        Character.OtherCharacter.Heal(sut, 100);
         
         Assert.AreEqual(sut.Health(), 1000);
     }
@@ -72,7 +72,7 @@ public class Tests
     {
         Character sut = new Character();
         
-        Character.OtherCharacter().Heal(sut, 100);
+        Character.OtherCharacter.Heal(sut, 100);
         
         Assert.AreEqual(sut.Health(), 1000);
     }

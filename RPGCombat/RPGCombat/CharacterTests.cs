@@ -1,7 +1,7 @@
 namespace RPGCombat;
 
 using static RPGCombat.Character;
-public class Tests
+public class CharacterTests
 {
     [Test]
     public void StartingHealthIs1000()

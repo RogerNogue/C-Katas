@@ -156,6 +156,14 @@ public class Tests
         Assert.IsTrue(sut.DistanceTo(new Position(1, 1)) == 0);
     }
     
+    [Test]
+    public void DistanceOf5Between2Positions()
+    {
+        Position sut = new Position(1, 1);
+        
+        Assert.IsTrue(sut.DistanceTo(new Position(4, 3)) == 5);
+    }
+    
     /*[Test]
     public void MeleeInRange3CannotAttack()
     {

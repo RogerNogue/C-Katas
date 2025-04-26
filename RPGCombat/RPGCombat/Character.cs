@@ -1,5 +1,11 @@
 namespace RPGCombat;
 
+/*tasks:
+ * Characters can be allies.
+ * allies cannot deal damage to one another.
+ * allies can heal one another.
+ */
+
 public class Character
 {
     public int Health { get; private set; }

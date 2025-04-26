@@ -208,12 +208,22 @@ public class CharacterTests
     }
     
     [Test]
-    public void NewPlayerCanJoinAlliance()
+    public void NewCharacterCanJoinAlliance()
     {
         Character sut = ACharacter;
         
         sut.JoinFaction("Alliance");
         
         Assert.AreEqual(sut.Faction, "Alliance");
+    }
+    
+    [Test]
+    public void NewCharacterCanJoinHorde()
+    {
+        Character sut = ACharacter;
+        
+        sut.JoinFaction("Horde");
+        
+        Assert.AreEqual(sut.Faction, "Horde");
     }
 }

@@ -204,7 +204,7 @@ public class CharacterTests
     {
         Character sut = ACharacter;
         
-        Assert.AreEqual(sut.Faction, "None");
+        Assert.IsFalse(sut.BelongsToAny());
     }
     
     [Test]
@@ -214,7 +214,7 @@ public class CharacterTests
         
         sut.JoinFaction("Alliance");
         
-        Assert.AreEqual(sut.Faction, "Alliance");
+        Assert.IsTrue(sut.BelongsTo("Alliance"), "Alliance");
     }
     
     [Test]
@@ -224,6 +224,18 @@ public class CharacterTests
         
         sut.JoinFaction("Horde");
         
-        Assert.AreEqual(sut.Faction, "Horde");
+        Assert.IsTrue(sut.BelongsTo("Horde"), "Horde");
+    }
+    
+    [Test]
+    public void NewCharacterCanJoinAllianceAndHorde()
+    {
+        Character sut = ACharacter;
+        
+        sut.JoinFaction("Horde");
+        sut.JoinFaction("Alliance");
+        
+        Assert.IsTrue(sut.BelongsTo("Alliance"));
+        Assert.IsTrue(sut.BelongsTo("Horde"));
     }
 }

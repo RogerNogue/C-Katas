@@ -1,5 +1,25 @@
 namespace RPGCombat;
 
+public class Affiliations
+{
+    HashSet<string> affiliations = new HashSet<string>();
+
+    public void Join(string faction)
+    {
+        affiliations.Add(faction);
+    }
+
+    public bool BelongsTo(string faction)
+    {
+        return affiliations.Contains(faction);
+    }
+    
+    public bool BelongsToAny()
+    {
+        return affiliations.Count > 0;
+    }
+}
+
 public class Character
 {
     public int Health { get; private set; }
@@ -7,7 +27,7 @@ public class Character
     public int Level { get; private set; } = 1;
     public bool Alive() => Health > 0;
     public int Range;
-    public string Faction { get; private set; } = "None";
+    private Affiliations affiliations;
     public Position Position { get; private set; }
 
     private Character(int range)
@@ -15,6 +35,7 @@ public class Character
         Range = range;
         Health = maxHealth;
         Position = new Position(0, 0);
+        affiliations = new Affiliations();
     }
 
     public static Character MeleeCharacter()
@@ -66,6 +87,16 @@ public class Character
 
     public void JoinFaction(string faction)
     {
-        Faction = faction;
+        affiliations.Join(faction);
+    }
+
+    public bool BelongsTo(string faction)
+    {
+        return affiliations.BelongsTo(faction);
+    }
+    
+    public bool BelongsToAny()
+    {
+        return affiliations.BelongsToAny();
     }
 }

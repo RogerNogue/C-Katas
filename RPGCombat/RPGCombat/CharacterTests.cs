@@ -198,4 +198,12 @@ public class CharacterTests
         
         Assert.AreEqual(sut.Health, 1000);
     }
+    
+    [Test]
+    public void NewPlayerBelongsToNoFaction()
+    {
+        Character sut = ACharacter;
+        
+        Assert.AreEqual(sut.Faction, "None");
+    }
 }

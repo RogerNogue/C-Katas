@@ -9,6 +9,11 @@ public class Affiliations
         affiliations.Add(faction);
     }
 
+    public void Leave(string faction)
+    {
+        affiliations.Remove(faction);
+    }
+
     public bool BelongsTo(string faction)
     {
         return affiliations.Contains(faction);
@@ -88,6 +93,11 @@ public class Character
     public void JoinFaction(string faction)
     {
         affiliations.Join(faction);
+    }
+    
+    public void LeaveFaction(string faction)
+    {
+        affiliations.Leave(faction);
     }
 
     public bool BelongsTo(string faction)

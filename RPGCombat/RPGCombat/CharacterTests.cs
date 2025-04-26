@@ -238,4 +238,15 @@ public class CharacterTests
         Assert.IsTrue(sut.BelongsTo("Alliance"));
         Assert.IsTrue(sut.BelongsTo("Horde"));
     }
+    
+    [Test]
+    public void CharacterCanLeaveAlliance()
+    {
+        Character sut = ACharacter;
+        
+        sut.JoinFaction("Horde");
+        sut.LeaveFaction("Horde");
+        
+        Assert.IsFalse(sut.BelongsToAnyFaction());
+    }
 }

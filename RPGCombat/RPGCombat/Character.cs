@@ -109,4 +109,9 @@ public class Character
     {
         return affiliations.BelongsToAny();
     }
+
+    public bool IsAllyOf(Character aCharacter)
+    {
+        return false;
+    }
 }

@@ -249,4 +249,12 @@ public class CharacterTests
         
         Assert.IsFalse(sut.BelongsToAnyFaction());
     }
+    
+    [Test]
+    public void NewCharactersAreNotAllies()
+    {
+        Character sut = ACharacter;
+        
+        Assert.IsFalse(sut.IsAllyOf(ACharacter));
+    }
 }

@@ -204,7 +204,7 @@ public class CharacterTests
     {
         Character sut = ACharacter;
         
-        Assert.IsFalse(sut.BelongsToAny());
+        Assert.IsFalse(sut.BelongsToAnyFaction());
     }
     
     [Test]

@@ -95,7 +95,7 @@ public class Character
         return affiliations.BelongsTo(faction);
     }
     
-    public bool BelongsToAny()
+    public bool BelongsToAnyFaction()
     {
         return affiliations.BelongsToAny();
     }

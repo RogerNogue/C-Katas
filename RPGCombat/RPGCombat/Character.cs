@@ -7,7 +7,7 @@ public class Character
     public int Level { get; private set; } = 1;
     public bool Alive() => Health > 0;
     public int Range;
-    public string Faction = "None";
+    public string Faction = "None" ;
     public Position Position { get; private set; }
 
     private Character(int range)
@@ -62,5 +62,10 @@ public class Character
     public void Move(Position position)
     {
         Position = position;
+    }
+
+    public void JoinFaction(string faction)
+    {
+        Faction = faction;
     }
 }

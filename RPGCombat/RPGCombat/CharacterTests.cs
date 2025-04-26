@@ -206,4 +206,14 @@ public class CharacterTests
         
         Assert.AreEqual(sut.Faction, "None");
     }
+    
+    [Test]
+    public void NewPlayerCanJoinAlliance()
+    {
+        Character sut = ACharacter;
+        
+        sut.JoinFaction("Alliance");
+        
+        Assert.AreEqual(sut.Faction, "Alliance");
+    }
 }

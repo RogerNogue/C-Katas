@@ -57,7 +57,7 @@ public class Character
     
     public void Harm(Prop target, int damage)
     {
-        target.Health -= int.Min(damage, Health);
+        target.Health -= int.Min(damage, target.Health);
     }
 
     private int CalculateDealtDamage(Character target, int damage)

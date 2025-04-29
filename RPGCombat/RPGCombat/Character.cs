@@ -64,8 +64,8 @@ public class Character
     {
         if (!target.Alive())
             throw new InvalidOperationException("Dead characters cannot be healed.");
-        if (this != target)
-            throw new InvalidOperationException("A Character can only heal itself");
+        if (!this.IsAllyOf(target) && this != target)
+            return;
         target.Health = int.Min(maxHealth, target.Health + amount);
     }
 

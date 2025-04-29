@@ -125,8 +125,9 @@ public class CharacterTests
         Character sut = ACharacter;
         
         ACharacter.Harm(sut, 100);
+        ACharacter.Heal(sut, 100);
         
-        Assert.Catch<InvalidOperationException>(() => ACharacter.Heal(sut, 100));
+        Assert.AreEqual(sut.Health, 900);
     }
     
     [Test]

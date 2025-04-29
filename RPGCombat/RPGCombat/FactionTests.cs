@@ -87,4 +87,19 @@ public class FactionTests
         
         Assert.AreEqual(sut.Health, 1000);
     }
+    
+    [Test]
+    public void AlliesCanHealEachOther()
+    {
+        Character sut = ACharacter;
+        Character other = ACharacter;
+        
+        other.Harm(sut, 100);
+        
+        sut.JoinFaction("Alliance");
+        other.JoinFaction("Alliance");
+        other.Heal(sut, 100);
+        
+        Assert.AreEqual(sut.Health, 1000);
+    }
 }

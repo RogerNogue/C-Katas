@@ -48,6 +48,9 @@ public class Character
 
         if (this.Position.DistanceTo(target.Position) > Range)
             return;
+
+        if (this.IsAllyOf(target))
+            return;
         
         int dealtDamage = damage;
         if ( target.Level >= Level + 5 )

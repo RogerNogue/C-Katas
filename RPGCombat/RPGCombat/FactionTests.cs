@@ -74,4 +74,17 @@ public class FactionTests
         
         Assert.IsTrue(sut.IsAllyOf(other));
     }
+    
+    [Test]
+    public void AlliesCanNotHarmEachOther()
+    {
+        Character sut = ACharacter;
+        Character other = ACharacter;
+        
+        sut.JoinFaction("Alliance");
+        other.JoinFaction("Alliance");
+        other.Harm(sut, 100);
+        
+        Assert.AreEqual(sut.Health, 1000);
+    }
 }

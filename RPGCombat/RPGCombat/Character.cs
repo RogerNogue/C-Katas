@@ -4,6 +4,12 @@ namespace RPGCombat;
  * [x] Characters can be allies.
  * [x] allies cannot deal damage to one another.
  * [x] allies can heal one another.
+ * props can be damaged
+ * props can not be healed
+ * props can not deal damage
+ * props do not belong to factions
+ * props are neutral
+ * props are destroyed when reduced to 0 health
  */
 
 public class Character

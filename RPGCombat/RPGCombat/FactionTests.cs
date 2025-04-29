@@ -2,7 +2,7 @@ using static RPGCombat.Character;
 
 namespace RPGCombat;
 
-public class AlliancesTest
+public class FactionTests
 {
     [Test]
     public void NewPlayerBelongsToNoFaction()

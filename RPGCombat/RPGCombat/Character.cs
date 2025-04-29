@@ -2,8 +2,8 @@ namespace RPGCombat;
 
 /*tasks:
  * [x] Characters can be allies.
- * allies cannot deal damage to one another.
- * allies can heal one another.
+ * [x] allies cannot deal damage to one another.
+ * [x] allies can heal one another.
  */
 
 public class Character

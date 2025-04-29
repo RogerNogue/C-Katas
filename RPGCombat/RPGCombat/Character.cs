@@ -43,23 +43,35 @@ public class Character
 
     public void Harm(Character target, int damage)
     {
-        if (this == target)
-            throw new InvalidOperationException("A Character cannot Deal Damage to itself.");
+        if (!CanHarm(target)) return;
 
-        if (this.Position.DistanceTo(target.Position) > Range)
-            return;
+        var dealtDamage = CalculateDealtDamage(target, damage);
+        target.Health -= int.Min(dealtDamage, Health);
+    }
 
-        if (this.IsAllyOf(target))
-            return;
-        
+    private int CalculateDealtDamage(Character target, int damage)
+    {
         int dealtDamage = damage;
         if ( target.Level >= Level + 5 )
             dealtDamage = (int)(dealtDamage * 0.5f);
         if( Level >= target.Level + 5 )
             dealtDamage = (int)(dealtDamage * 1.5f);
-        target.Health -= int.Min(dealtDamage, Health);
+        return dealtDamage;
     }
-    
+
+    private bool CanHarm(Character target)
+    {
+        if (this == target)
+            throw new InvalidOperationException("A Character cannot Deal Damage to itself.");
+
+        if (this.Position.DistanceTo(target.Position) > Range)
+            return false;
+
+        if (this.IsAllyOf(target))
+            return false;
+        return true;
+    }
+
     public void Heal(Character target, int amount)
     {
         if (!target.Alive())

@@ -14,4 +14,14 @@ public class PropsTests
         
         Assert.AreEqual(sut.Health, 1500);
     }
+    
+    [Test]
+    public void PropWith0HealthIsDestroyed()
+    {
+        Prop sut = Aprop(2000);
+        
+        ACharacter.Harm(sut, 2000);
+        
+        Assert.IsTrue(sut.IsDestroyed);
+    }
 }

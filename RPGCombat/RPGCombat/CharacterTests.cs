@@ -240,7 +240,7 @@ public class CharacterTests
     }
     
     [Test]
-    public void CharacterCanLeaveAlliance()
+    public void CharacterCanLeaveHorde()
     {
         Character sut = ACharacter;
         

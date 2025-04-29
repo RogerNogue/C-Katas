@@ -93,6 +93,6 @@ public class Character
 
     public bool IsAllyOf(Character aCharacter)
     {
-        return false;
+        return affiliations.AreAllied(aCharacter.affiliations);
     }
 }

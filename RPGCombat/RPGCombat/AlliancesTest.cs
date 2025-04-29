@@ -1,3 +1,5 @@
+using static RPGCombat.Character;
+
 namespace RPGCombat;
 
 public class AlliancesTest
@@ -5,7 +7,7 @@ public class AlliancesTest
     [Test]
     public void NewPlayerBelongsToNoFaction()
     {
-        Character sut = Character.ACharacter;
+        Character sut = ACharacter;
         
         Assert.IsFalse(sut.BelongsToAnyFaction());
     }
@@ -13,7 +15,7 @@ public class AlliancesTest
     [Test]
     public void NewCharacterCanJoinAlliance()
     {
-        Character sut = Character.ACharacter;
+        Character sut = ACharacter;
         
         sut.JoinFaction("Alliance");
         
@@ -23,7 +25,7 @@ public class AlliancesTest
     [Test]
     public void NewCharacterCanJoinHorde()
     {
-        Character sut = Character.ACharacter;
+        Character sut = ACharacter;
         
         sut.JoinFaction("Horde");
         
@@ -33,7 +35,7 @@ public class AlliancesTest
     [Test]
     public void NewCharacterCanJoinAllianceAndHorde()
     {
-        Character sut = Character.ACharacter;
+        Character sut = ACharacter;
         
         sut.JoinFaction("Horde");
         sut.JoinFaction("Alliance");
@@ -45,7 +47,7 @@ public class AlliancesTest
     [Test]
     public void CharacterCanLeaveHorde()
     {
-        Character sut = Character.ACharacter;
+        Character sut = ACharacter;
         
         sut.JoinFaction("Horde");
         sut.LeaveFaction("Horde");
@@ -56,8 +58,20 @@ public class AlliancesTest
     [Test]
     public void NewCharactersAreNotAllies()
     {
-        Character sut = Character.ACharacter;
+        Character sut = ACharacter;
         
-        Assert.IsFalse(sut.IsAllyOf(Character.ACharacter));
+        Assert.IsFalse(sut.IsAllyOf(ACharacter));
+    }
+    
+    [Test]
+    public void CharactersWhoJoinedTheSameFactionAreAllies()
+    {
+        Character sut = ACharacter;
+        Character other = ACharacter;
+        
+        sut.JoinFaction("Alliance");
+        other.JoinFaction("Alliance");
+        
+        Assert.IsTrue(sut.IsAllyOf(other));
     }
 }

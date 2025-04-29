@@ -23,4 +23,9 @@ public class Affiliations
     {
         return affiliations.Count > 0;
     }
+
+    public bool AreAllied(Affiliations otherAffiliations)
+    {
+        return affiliations.Overlaps(otherAffiliations.affiliations);
+    }
 }

@@ -54,6 +54,11 @@ public class Character
         var dealtDamage = CalculateDealtDamage(target, damage);
         target.Health -= int.Min(dealtDamage, Health);
     }
+    
+    public void Harm(Prop target, int damage)
+    {
+        target.Health -= int.Min(damage, Health);
+    }
 
     private int CalculateDealtDamage(Character target, int damage)
     {

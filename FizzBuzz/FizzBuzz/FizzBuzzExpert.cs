@@ -14,6 +14,6 @@ public class FizzBuzzExpert
             return "Fizz";
         if (IsMultipleOfFive)
             return "Buzz";
-        return "1";
+        return numberToProcess.ToString();
     }
 }

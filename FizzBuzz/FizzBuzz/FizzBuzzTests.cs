@@ -62,4 +62,12 @@ public class Tests
         
         Assert.AreEqual(sut.FizzBuzz(15), "FizzBuzz");
     }
+    
+    [Test]
+    public void FizzBuzzOf7Returns7()
+    {
+        FizzBuzzExpert sut = new FizzBuzzExpert();
+        
+        Assert.AreEqual(sut.FizzBuzz(7), "7");
+    }
 }

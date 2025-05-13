@@ -24,6 +24,14 @@ public class Tests
     }
     
     [Test]
+    public void FizzBuzzOfNegative3ReturnsEmpty()
+    {
+        FizzBuzzExpert sut = new FizzBuzzExpert();
+        
+        Assert.AreEqual(sut.FizzBuzz(-3), string.Empty);
+    }
+    
+    [Test]
     public void FizzBuzzOf1Returns1()
     {
         FizzBuzzExpert sut = new FizzBuzzExpert();

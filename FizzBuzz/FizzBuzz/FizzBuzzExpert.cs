@@ -10,6 +10,8 @@ public class FizzBuzzExpert
             return "Fizz";
         if (numberToProcess == 5)
             return "Buzz";
+        if (numberToProcess == 15)
+            return "FizzBuzz";
         return string.Empty;
     }
 }

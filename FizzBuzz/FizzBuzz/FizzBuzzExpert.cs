@@ -6,6 +6,8 @@ public class FizzBuzzExpert
     {
         if (numberToProcess == 1)
             return "1";
+        if (numberToProcess == 3)
+            return "Fizz";
         return string.Empty;
     }
 }

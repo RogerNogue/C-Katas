@@ -30,4 +30,12 @@ public class Tests
         
         Assert.AreEqual(sut.FizzBuzz(1), "1");
     }
+    
+    [Test]
+    public void FizzBuzzOf3ReturnsFizz()
+    {
+        FizzBuzzExpert sut = new FizzBuzzExpert();
+        
+        Assert.AreEqual(sut.FizzBuzz(3), "Fizz");
+    }
 }

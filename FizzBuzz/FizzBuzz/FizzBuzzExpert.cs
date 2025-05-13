@@ -6,14 +6,17 @@ public class FizzBuzzExpert
     {
         if( numberToProcess < 1 )
             return string.Empty;
-        bool isMultipleOfThree = numberToProcess % 3 == 0;
-        bool IsMultipleOfFive = numberToProcess % 5 == 0;
-        if (IsMultipleOfFive && isMultipleOfThree)
+        if (IsMultipleOf(numberToProcess, 3) && IsMultipleOf(numberToProcess, 5))
             return "FizzBuzz";
-        if (isMultipleOfThree)
+        if (IsMultipleOf(numberToProcess, 3))
             return "Fizz";
-        if (IsMultipleOfFive)
+        if (IsMultipleOf(numberToProcess, 5))
             return "Buzz";
         return numberToProcess.ToString();
+    }
+
+    private bool IsMultipleOf(int numberToProcess, int iebgru)
+    {
+        return numberToProcess % iebgru == 0;
     }
 }

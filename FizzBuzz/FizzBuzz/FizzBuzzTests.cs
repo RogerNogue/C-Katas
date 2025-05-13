@@ -7,7 +7,7 @@ public class Tests
     {
         FizzBuzzExpert sut = new FizzBuzzExpert();
         
-        Assert.AreEqual(sut.FizzBuzz("0"), string.Empty);
+        Assert.AreEqual(sut.FizzBuzz(0), string.Empty);
     }
     
     [Test]
@@ -15,6 +15,6 @@ public class Tests
     {
         FizzBuzzExpert sut = new FizzBuzzExpert();
         
-        Assert.AreEqual(sut.FizzBuzz("-1"), string.Empty);
+        Assert.AreEqual(sut.FizzBuzz(-1), string.Empty);
     }
 }

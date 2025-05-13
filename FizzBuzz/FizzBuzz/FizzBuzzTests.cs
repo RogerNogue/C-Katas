@@ -9,4 +9,12 @@ public class Tests
         
         Assert.AreEqual(sut.FizzBuzz("0"), string.Empty);
     }
+    
+    [Test]
+    public void FizzBuzzOfNegative1ReturnsEmpty()
+    {
+        FizzBuzzExpert sut = new FizzBuzzExpert();
+        
+        Assert.AreEqual(sut.FizzBuzz("-1"), string.Empty);
+    }
 }

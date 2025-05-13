@@ -3,7 +3,7 @@ namespace FizzBuzz;
 public class Tests
 {
     [Test]
-    public void LessThanOneReturnsEmpty()
+    public void FizzBuzzOf0ReturnsEmpty()
     {
         FizzBuzzExpert sut = new FizzBuzzExpert();
         

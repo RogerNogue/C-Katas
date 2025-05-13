@@ -1,5 +1,10 @@
 namespace FizzBuzz;
 
+/*
+ * [] test 1
+ * [] test fizz
+ */
+
 public class Tests
 {
     [Test]

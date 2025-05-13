@@ -1,7 +1,7 @@
 namespace FizzBuzz;
 
 /*
- * [] test 1
+ * [x] test 1
  * [] test fizz
  */
 

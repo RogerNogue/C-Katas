@@ -4,16 +4,16 @@ public class FizzBuzzExpert
 {
     public string FizzBuzz(int numberToProcess)
     {
-        
-        
-        if (numberToProcess == 1)
-            return "1";
-        if (numberToProcess == 3)
-            return "Fizz";
-        if (numberToProcess == 5)
-            return "Buzz";
-        if (numberToProcess == 15)
+        if( numberToProcess < 1 )
+            return string.Empty;
+        bool isMultipleOfThree = numberToProcess % 3 == 0;
+        bool IsMultipleOfFive = numberToProcess % 5 == 0;
+        if (IsMultipleOfFive && isMultipleOfThree)
             return "FizzBuzz";
-        return string.Empty;
+        if (isMultipleOfThree)
+            return "Fizz";
+        if (IsMultipleOfFive)
+            return "Buzz";
+        return "1";
     }
 }

@@ -1,4 +1,4 @@
-namespace ShoppingCart;
+namespace GameOfLife;
 
 public class Tests
 {

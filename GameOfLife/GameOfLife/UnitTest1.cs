@@ -12,8 +12,19 @@ public class Tests
     {
         GameOfLife sut = new GameOfLife();
 
-        sut.AddCell(0, 0);
+        sut.AddCell(new Cell(0, 0));
         
-        Assert.True(sut.IsAlive(0, 0));
+        Assert.True(sut.IsAlive(new Cell(0, 0)));
+    }
+
+    [Test]
+    public void LoneCellDiesAfterTurn()
+    {
+        GameOfLife sut = new GameOfLife();
+        
+        sut.AddCell(new Cell(0, 0));
+        sut.PassTurn();
+        
+        Assert.False(sut.IsAlive(new Cell(0, 0)));
     }
 }

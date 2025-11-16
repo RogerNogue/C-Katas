@@ -2,13 +2,30 @@ namespace GameOfLife;
 
 public class GameOfLife
 {
-    public void AddCell(int x, int y)
+    bool isAlive = true;
+    public void AddCell(Cell cell)
     {
         
     }
 
-    public bool IsAlive(int x, int y)
+    public bool IsAlive(Cell cell)
     {
-        return true;
+        return isAlive;
     }
+
+    public void PassTurn()
+    {
+        isAlive = false;
+    }
+}
+
+public class Cell
+{
+    public uint X, Y;
+    public Cell(uint x, uint y)
+    {
+        X = x;
+        Y = y;
+    }
+    
 }

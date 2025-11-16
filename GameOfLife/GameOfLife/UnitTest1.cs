@@ -27,4 +27,17 @@ public class Tests
         
         Assert.False(sut.IsAlive(new Cell(0, 0)));
     }
+
+    [Test]
+    public void CellWithNeighborsSurvives()
+    {
+        GameOfLife sut = new GameOfLife();
+        
+        sut.AddCell(new Cell(0, 0));
+        sut.AddCell(new Cell(1, 0));
+        sut.AddCell(new Cell(0, 1));
+        sut.PassTurn();
+        
+        Assert.True(sut.IsAlive(new Cell(0, 0)));
+    }
 }

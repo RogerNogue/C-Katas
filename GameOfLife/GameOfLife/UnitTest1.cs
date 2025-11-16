@@ -8,8 +8,12 @@ Any dead cell with exactly three live neighbours becomes a live cell, as if by r
 public class Tests
 {
     [Test]
-    public void Test1()
+    public void CellIsAlive()
     {
-        Assert.Pass();
+        GameOfLife sut = new GameOfLife();
+
+        sut.AddCell(0, 0);
+        
+        Assert.True(sut.IsAlive(0, 0));
     }
 }

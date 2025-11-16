@@ -12,9 +12,9 @@ public class Tests
     {
         GameOfLife sut = new GameOfLife();
 
-        sut.AddCell(new Cell(0, 0));
+        sut.AddCell(Cell.Origin());
         
-        Assert.True(sut.IsAlive(new Cell(0, 0)));
+        Assert.True(sut.IsAlive(Cell.Origin()));
     }
 
     [Test]
@@ -22,10 +22,10 @@ public class Tests
     {
         GameOfLife sut = new GameOfLife();
         
-        sut.AddCell(new Cell(0, 0));
+        sut.AddCell(Cell.Origin());
         sut.PassTurn();
         
-        Assert.False(sut.IsAlive(new Cell(0, 0)));
+        Assert.False(sut.IsAlive(Cell.Origin()));
     }
 
     [Test]
@@ -33,11 +33,24 @@ public class Tests
     {
         GameOfLife sut = new GameOfLife();
         
-        sut.AddCell(new Cell(0, 0));
+        sut.AddCell(Cell.Origin());
         sut.AddCell(new Cell(1, 0));
         sut.AddCell(new Cell(0, 1));
         sut.PassTurn();
         
-        Assert.True(sut.IsAlive(new Cell(0, 0)));
+        Assert.True(sut.IsAlive(Cell.Origin()));
+    }
+
+    [Test]
+    public void CellWithNoNeighborsButOtherCellsDoesNotSurvive()
+    {
+        GameOfLife sut = new GameOfLife();
+        
+        sut.AddCell(Cell.Origin());
+        sut.AddCell(new Cell(2, 0));
+        sut.AddCell(new Cell(0, 2));
+        sut.PassTurn();
+        
+        Assert.False(sut.IsAlive(Cell.Origin()));
     }
 }

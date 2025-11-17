@@ -76,7 +76,13 @@ public readonly struct Cell
 
     public bool IsNeighbor(Cell cell)
     {
-        return Math.Abs((int)(X - cell.X)) == 1 && Math.Abs((int)(Y - cell.Y)) == 1;
+        bool isNeighbor = false;
+        int dx = Math.Abs((int)(X - cell.X));
+        int dy = Math.Abs((int)(Y - cell.Y));
+        isNeighbor = isNeighbor || dx == 1 && dy == 1;
+        isNeighbor = isNeighbor || dx == 1 && dy == 0;
+        isNeighbor = isNeighbor || dx == 0 && dy == 1;
+        return isNeighbor;
     }
 
     public static Cell Origin()

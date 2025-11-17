@@ -53,4 +53,16 @@ public class Tests
         
         Assert.False(sut.IsAlive(Cell.Origin()));
     }
+
+    [Test]
+    public void CellWithOneNeighborDoesNotSurvive()
+    {
+        GameOfLife sut = new GameOfLife();
+        
+        sut.AddCell(Cell.Origin());
+        sut.AddCell(new Cell(1, 0));
+        sut.PassTurn();
+        
+        Assert.False(sut.IsAlive(Cell.Origin()));
+    }
 }

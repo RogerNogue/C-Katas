@@ -49,9 +49,9 @@ public class World
     private uint NumberOfNeighbors(Cell cell)
     {
         uint neighborCount = 0;
-        foreach (var currentCell in cells)
+        foreach (Cell currentCell in cells)
         {
-            if (cell.IsNeighbor(currentCell))
+            if ( cell.IsNeighbor(currentCell))
             {
                 neighborCount++;
             }
@@ -76,7 +76,7 @@ public readonly struct Cell
 
     public bool IsNeighbor(Cell cell)
     {
-        return Math.Abs((int)(X - cell.X)) <= 1 && Math.Abs((int)(Y - cell.Y)) <= 1;
+        return Math.Abs((int)(X - cell.X)) == 1 && Math.Abs((int)(Y - cell.Y)) == 1;
     }
 
     public static Cell Origin()

@@ -25,11 +25,6 @@ public class World
     public void Add(Cell cell)
     {
         cells.Add(cell);
-        //log contents of cells
-        Console.WriteLine("Cells in world:");
-        foreach (var c in cells)
-        {            Console.WriteLine($"Cell at ({c.X}, {c.Y})");
-        }
     }
 
     public void PassTurn()

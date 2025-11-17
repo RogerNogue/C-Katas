@@ -81,8 +81,17 @@ public class Tests
     }
 
     [Test]
-    public void CellsWith()
+    public void CellsWithMoreThan3NeighborsDieFromOvercrowding()
     {
+        GameOfLife sut = new GameOfLife();
         
+        sut.AddCell(Cell.Origin());
+        sut.AddCell(new Cell(1, 1));
+        sut.AddCell(new Cell(2, 1));
+        sut.AddCell(new Cell(1, 2));
+        sut.AddCell(new Cell(2, 2));
+        sut.PassTurn();
+        
+        Assert.False(sut.IsAlive(new Cell(1, 1)));
     }
 }

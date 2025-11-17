@@ -79,4 +79,10 @@ public class Tests
         
         Assert.True(sut.IsAlive(Cell.Origin()));
     }
+
+    [Test]
+    public void CellsWith()
+    {
+        
+    }
 }

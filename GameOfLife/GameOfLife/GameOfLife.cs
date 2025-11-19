@@ -76,6 +76,11 @@ public class World
         
         return neighbors;
     }
+
+    public List<Cell> FindEmptyNeighborLocations(Cell cell)
+    {
+        return FindNeighborLocations(cell);
+    }
 }
 
 public readonly struct Cell

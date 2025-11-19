@@ -119,4 +119,15 @@ public class Tests
         
         Assert.True(sut.FindNeighborLocations(Cell.Origin()).Count == 3);
     }
+
+    [Test]
+    public void CellHas3EmptyNeighbors()
+    {
+        World sut = new World();
+        
+        sut.Add(Cell.Origin());
+        
+        Assert.True(sut.FindEmptyNeighborLocations(Cell.Origin()).Count == 3);
+    }
+
 }

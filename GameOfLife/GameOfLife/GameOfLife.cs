@@ -79,7 +79,18 @@ public class World
 
     public List<Cell> FindEmptyNeighborLocations(Cell cell)
     {
-        return FindNeighborLocations(cell);
+        List<Cell> neighborLocations = FindNeighborLocations(cell);
+        List<Cell> emptyLocations = new List<Cell>();
+        foreach (var neighborLocation in neighborLocations)
+        {
+            if(cells.Contains(neighborLocation))
+            {
+                continue;
+            }
+            emptyLocations.Add(neighborLocation);
+        }
+
+        return emptyLocations;
     }
 }
 

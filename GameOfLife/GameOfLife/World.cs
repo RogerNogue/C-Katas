@@ -35,7 +35,7 @@ public class World
         }
     }
 
-    private uint NumberOfNeighbors(Cell cell)
+    public uint NumberOfNeighbors(Cell cell)
     {
         uint neighborCount = 0;
         foreach (Cell currentCell in cells)
@@ -85,20 +85,5 @@ public class World
         }
 
         return emptyLocations;
-    }
-
-    public List<Cell> FindAliveNeighbors(Cell cell)
-    {
-        List<Cell> neighborLocations = FindNeighborLocations(cell);
-        List<Cell> fullLocations = new List<Cell>();
-        foreach (var neighborLocation in neighborLocations)
-        {
-            if(cells.Contains(neighborLocation))
-            {
-                fullLocations.Add(neighborLocation);
-            }
-        }
-
-        return fullLocations;
     }
 }

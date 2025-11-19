@@ -147,7 +147,7 @@ public class Tests
         
         sut.Add(Cell.Origin());
         
-        Assert.True(sut.FindAliveNeighbors(Cell.Origin()).Count == 0);
+        Assert.True(sut.NumberOfNeighbors(Cell.Origin()) == 0);
     }
 
     [Test]
@@ -158,7 +158,7 @@ public class Tests
         sut.Add(Cell.Origin());
         sut.Add(new Cell(1, 0));
         
-        Assert.True(sut.FindAliveNeighbors(new Cell(1, 1)).Count == 2);
+        Assert.True(sut.NumberOfNeighbors(new Cell(1, 1)) == 2);
     }
 
     [Test]

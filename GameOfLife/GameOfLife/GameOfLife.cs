@@ -93,9 +93,19 @@ public class World
         return emptyLocations;
     }
 
-    public List<Cell> FindAliveNeighbors(Cell origin)
+    public List<Cell> FindAliveNeighbors(Cell cell)
     {
-        return new List<Cell>();
+        List<Cell> neighborLocations = FindNeighborLocations(cell);
+        List<Cell> fullLocations = new List<Cell>();
+        foreach (var neighborLocation in neighborLocations)
+        {
+            if(cells.Contains(neighborLocation))
+            {
+                fullLocations.Add(neighborLocation);
+            }
+        }
+
+        return fullLocations;
     }
 }
 

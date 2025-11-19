@@ -149,4 +149,15 @@ public class Tests
         
         Assert.True(sut.FindAliveNeighbors(Cell.Origin()).Count == 0);
     }
+
+    [Test]
+    public void CellHas2AliveNeighbors()
+    {
+        World sut = new World();
+        
+        sut.Add(Cell.Origin());
+        sut.Add(new Cell(1, 0));
+        
+        Assert.True(sut.FindAliveNeighbors(new Cell(1, 1)).Count == 2);
+    }
 }

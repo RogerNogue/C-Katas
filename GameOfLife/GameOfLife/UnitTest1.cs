@@ -139,4 +139,14 @@ public class Tests
         
         Assert.True(sut.FindEmptyNeighborLocations(new Cell(1, 1)).Count == 7);
     }
+
+    [Test]
+    public void CellHas0AliveNeighbors()
+    {
+        World sut = new World();
+        
+        sut.Add(Cell.Origin());
+        
+        Assert.True(sut.FindAliveNeighbors(Cell.Origin()).Count == 0);
+    }
 }

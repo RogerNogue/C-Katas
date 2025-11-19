@@ -92,6 +92,11 @@ public class World
 
         return emptyLocations;
     }
+
+    public List<Cell> FindAliveNeighbors(Cell origin)
+    {
+        return new List<Cell>();
+    }
 }
 
 public readonly struct Cell

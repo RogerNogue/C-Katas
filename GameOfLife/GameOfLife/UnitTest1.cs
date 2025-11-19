@@ -109,4 +109,14 @@ public class Tests
         
         Assert.True(sut.FindNeighbors(new Cell(1, 1)).Count == 8);
     }
+
+    [Test]
+    public void OriginHas3Neighbors()
+    {
+        World sut = new World();
+        
+        sut.Add(Cell.Origin());
+        
+        Assert.True(sut.FindNeighbors(Cell.Origin()).Count == 3);
+    }
 }

@@ -32,6 +32,7 @@ public class World
         List<Cell> survivors = new List<Cell>();
         foreach (var cell in cells)
         {
+            AddNewBornsAround(cell, survivors);
             if (NumberOfNeighbors(cell) is 2 or 3)
             {
                 survivors.Add(cell);
@@ -39,6 +40,18 @@ public class World
         }
 
         cells = survivors;
+    }
+
+    private void AddNewBornsAround(Cell cell, List<Cell> survivors)
+    {
+        List<Cell> potentialNewBorns = FindEmptyNeighborLocations(cell);
+        foreach (var potentialNewBorn in potentialNewBorns)
+        {
+            if (NumberOfNeighbors(potentialNewBorn) == 3)
+            {
+                survivors.Add(potentialNewBorn);
+            }
+        }
     }
 
     private uint NumberOfNeighbors(Cell cell)

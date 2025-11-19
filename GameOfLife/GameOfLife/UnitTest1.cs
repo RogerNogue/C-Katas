@@ -160,4 +160,17 @@ public class Tests
         
         Assert.True(sut.FindAliveNeighbors(new Cell(1, 1)).Count == 2);
     }
+
+    [Test]
+    public void CellIsBorn()
+    {
+        GameOfLife sut = new GameOfLife();
+        
+        sut.AddCell(Cell.Origin());
+        sut.AddCell(new Cell(1, 0));
+        sut.AddCell(new Cell(0, 1));
+        sut.PassTurn();
+        
+        Assert.True(sut.IsAlive(new Cell(1, 1)));        
+    }
 }

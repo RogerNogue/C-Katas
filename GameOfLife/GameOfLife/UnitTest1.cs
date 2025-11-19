@@ -107,7 +107,7 @@ public class Tests
         
         sut.Add(new Cell(1, 1));
         
-        Assert.True(sut.FindNeighbors(new Cell(1, 1)).Count == 8);
+        Assert.True(sut.FindNeighborLocations(new Cell(1, 1)).Count == 8);
     }
 
     [Test]
@@ -117,6 +117,6 @@ public class Tests
         
         sut.Add(Cell.Origin());
         
-        Assert.True(sut.FindNeighbors(Cell.Origin()).Count == 3);
+        Assert.True(sut.FindNeighborLocations(Cell.Origin()).Count == 3);
     }
 }

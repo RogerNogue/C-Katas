@@ -59,7 +59,7 @@ public class World
         return cells.Contains(cell);
     }
 
-    public List<Cell> FindNeighbors(Cell cell)
+    public List<Cell> FindNeighborLocations(Cell cell)
     {
         List<Cell> neighbors = new List<Cell>();
         for (int i = -1; i <= 1; i++)

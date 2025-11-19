@@ -99,4 +99,14 @@ public class Tests
         
         Assert.False(sut.IsAlive(new Cell(1, 1)));
     }
+
+    [Test]
+    public void ACellHas8Neighbors()
+    {
+        World sut = new World();
+        
+        sut.Add(new Cell(1, 1));
+        
+        Assert.True(sut.FindNeighbors(new Cell(1, 1)).Count == 8);
+    }
 }

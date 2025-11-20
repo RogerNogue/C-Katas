@@ -19,7 +19,6 @@ public class GameOfLife
                 survivors.Add(cell);
             }
         }
-
         cells = survivors;
     }
 
@@ -67,7 +66,6 @@ public class GameOfLife
                 neighbors.Add(new Cell((uint)newCellX, (uint)newCellY));
             }
         }
-        
         return neighbors;
     }
 
@@ -82,7 +80,6 @@ public class GameOfLife
                 emptyLocations.Add(neighborLocation);   
             }
         }
-
         return emptyLocations;
     }
 }

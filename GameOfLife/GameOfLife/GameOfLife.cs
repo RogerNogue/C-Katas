@@ -77,11 +77,10 @@ public class GameOfLife
         List<Cell> emptyLocations = new List<Cell>();
         foreach (var neighborLocation in neighborLocations)
         {
-            if(cells.Contains(neighborLocation))
+            if(!cells.Contains(neighborLocation))
             {
-                continue;
+                emptyLocations.Add(neighborLocation);   
             }
-            emptyLocations.Add(neighborLocation);
         }
 
         return emptyLocations;

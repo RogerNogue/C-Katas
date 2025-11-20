@@ -14,12 +14,17 @@ public class GameOfLife
         foreach (var cell in cells)
         {
             AddNewBornsAround(cell, survivors);
-            if (NumberOfNeighbors(cell) is 2 or 3)
-            {
-                survivors.Add(cell);
-            }
+            AddSurvivors(cell, survivors);
         }
         cells = survivors;
+    }
+
+    private void AddSurvivors(Cell cell, List<Cell> survivors)
+    {
+        if (NumberOfNeighbors(cell) is 2 or 3)
+        {
+            survivors.Add(cell);
+        }
     }
 
     private void AddNewBornsAround(Cell cell, List<Cell> survivors)

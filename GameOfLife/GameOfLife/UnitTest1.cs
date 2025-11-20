@@ -103,9 +103,9 @@ public class Tests
     [Test]
     public void ACellHas8Neighbors()
     {
-        World sut = new World();
+        GameOfLife sut = new GameOfLife();
         
-        sut.Add(new Cell(1, 1));
+        sut.AddCell(new Cell(1, 1));
         
         Assert.True(sut.FindNeighborLocations(new Cell(1, 1)).Count == 8);
     }
@@ -113,9 +113,9 @@ public class Tests
     [Test]
     public void OriginHas3Neighbors()
     {
-        World sut = new World();
+        GameOfLife sut = new GameOfLife();
         
-        sut.Add(Cell.Origin());
+        sut.AddCell(Cell.Origin());
         
         Assert.True(sut.FindNeighborLocations(Cell.Origin()).Count == 3);
     }
@@ -123,9 +123,9 @@ public class Tests
     [Test]
     public void CellHas3EmptyNeighbors()
     {
-        World sut = new World();
+        GameOfLife sut = new GameOfLife();
         
-        sut.Add(Cell.Origin());
+        sut.AddCell(Cell.Origin());
         
         Assert.True(sut.FindEmptyNeighborLocations(Cell.Origin()).Count == 3);
     }
@@ -133,9 +133,9 @@ public class Tests
     [Test]
     public void CellHas7EmptyNeighbors()
     {
-        World sut = new World();
+        GameOfLife sut = new GameOfLife();
         
-        sut.Add(Cell.Origin());
+        sut.AddCell(Cell.Origin());
         
         Assert.True(sut.FindEmptyNeighborLocations(new Cell(1, 1)).Count == 7);
     }
@@ -143,9 +143,9 @@ public class Tests
     [Test]
     public void CellHas0AliveNeighbors()
     {
-        World sut = new World();
+        GameOfLife sut = new GameOfLife();
         
-        sut.Add(Cell.Origin());
+        sut.AddCell(Cell.Origin());
         
         Assert.True(sut.NumberOfNeighbors(Cell.Origin()) == 0);
     }
@@ -153,10 +153,10 @@ public class Tests
     [Test]
     public void CellHas2AliveNeighbors()
     {
-        World sut = new World();
+        GameOfLife sut = new GameOfLife();
         
-        sut.Add(Cell.Origin());
-        sut.Add(new Cell(1, 0));
+        sut.AddCell(Cell.Origin());
+        sut.AddCell(new Cell(1, 0));
         
         Assert.True(sut.NumberOfNeighbors(new Cell(1, 1)) == 2);
     }
